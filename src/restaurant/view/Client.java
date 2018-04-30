@@ -7,7 +7,6 @@ package restaurant.view;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,9 +14,11 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
-import restaurant.model.Dish;
-import restaurant.model.Order;
-import restaurant.model.User;
+
+import restaurant.controller.AddDishButtonController;
+import restaurant.controller.ConfirmOrderButtonController;
+import restaurant.controller.DeleteDishButtonController;
+import restaurant.model.*;
 import restaurant.util.FileDB;
 
 /**
@@ -32,9 +33,9 @@ public class Client extends JFrame {
      * Creates new form UserGUI
      */
     public Client(User user) {
-        initComponents();
-        
         this.user = user;
+        initComponents();
+
         jLabel2.setText(user.getLogin());
         jLabel4.setText(String.valueOf(user.getMoney()));
         
@@ -66,9 +67,9 @@ public class Client extends JFrame {
     }
     
     private void fillTables(List<Dish> dishes) {     
-        DefaultTableModel ftm = (DefaultTableModel) jTable1.getModel(),
-                stm = (DefaultTableModel) jTable2.getModel(),
-                dtm = (DefaultTableModel) jTable3.getModel();
+        DefaultTableModel ftm = (DefaultTableModel) firstDishesTable.getModel(),
+                stm = (DefaultTableModel) secondDishesTable.getModel(),
+                dtm = (DefaultTableModel) drinksTable.getModel();
         
         for (int i = ftm.getRowCount() - 1; i >= 0; i--)
             ftm.removeRow(i);
@@ -104,21 +105,21 @@ public class Client extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        headerLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        firstDishesTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        secondDishesTable = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        drinksTable = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        ordersTable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        confirmOrderButton = new javax.swing.JButton();
+        addFirstDishButton = new javax.swing.JButton();
+        addSecondDishButton = new javax.swing.JButton();
+        addDrinkButton = new javax.swing.JButton();
+        deleteFromOrderButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -128,143 +129,51 @@ public class Client extends JFrame {
         setTitle("Restaurant App | Client");
         setPreferredSize(new java.awt.Dimension(1000, 1000));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Client order panel");
+        headerLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        headerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        headerLabel.setText("Client order panel");
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("First dishes"));
         jScrollPane1.setPreferredSize(new java.awt.Dimension(460, 400));
 
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Name", "Description", "Cooking time", "Price"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        firstDishesTable.setAutoCreateRowSorter(true);
+        firstDishesTable.setModel(new MenuTableModel());
+        firstDishesTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(firstDishesTable);
+        firstDishesTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder("Second dishes"));
         jScrollPane2.setPreferredSize(new java.awt.Dimension(460, 400));
 
-        jTable2.setAutoCreateRowSorter(true);
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Name", "Description", "Cooking time", "Price"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(jTable2);
-        jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        secondDishesTable.setAutoCreateRowSorter(true);
+        secondDishesTable.setModel(new MenuTableModel());
+        secondDishesTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(secondDishesTable);
+        secondDishesTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jScrollPane3.setBorder(javax.swing.BorderFactory.createTitledBorder("Drinks"));
         jScrollPane3.setPreferredSize(new java.awt.Dimension(460, 400));
 
-        jTable3.setAutoCreateRowSorter(true);
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Name", "Description", "Cooking time", "Price"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane3.setViewportView(jTable3);
-        jTable3.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        drinksTable.setAutoCreateRowSorter(true);
+        drinksTable.setModel(new MenuTableModel());
+        drinksTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane3.setViewportView(drinksTable);
+        drinksTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jScrollPane4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255)), "Your order"));
         jScrollPane4.setPreferredSize(new java.awt.Dimension(460, 400));
 
-        jTable4.setAutoCreateRowSorter(true);
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Name", "Description", "Cooking time", "Price"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable4.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane4.setViewportView(jTable4);
-        jTable4.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        ordersTable.setAutoCreateRowSorter(true);
+        ordersTable.setModel(new MenuTableModel());
+        ordersTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane4.setViewportView(ordersTable);
+        ordersTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jPanel1.setAlignmentX(Component.CENTER_ALIGNMENT);
         jPanel1.setAlignmentY(Component.CENTER_ALIGNMENT);
 
-        jButton5.setText("Confirm order");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
+        confirmOrderButton.setText("Confirm order");
+        confirmOrderButton.addActionListener(new ConfirmOrderButtonController(user, ordersTable));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -272,44 +181,31 @@ public class Client extends JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(confirmOrderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(confirmOrderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
 
-        jButton1.setText("Add first dish");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        addFirstDishButton.setText("Add first dish");
+        addFirstDishButton.addActionListener(new AddDishButtonController(firstDishesTable,
+                (DefaultTableModel) ordersTable.getModel()));
 
-        jButton2.setText("Add second dish");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        addSecondDishButton.setText("Add second dish");
+        addSecondDishButton.addActionListener(new AddDishButtonController(secondDishesTable,
+                (DefaultTableModel) ordersTable.getModel()));
 
-        jButton3.setText("Add drink");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
+        addDrinkButton.setText("Add drink");
+        addDrinkButton.addActionListener(new AddDishButtonController(drinksTable,
+                (DefaultTableModel) ordersTable.getModel()));
 
-        jButton4.setText("Delete from order");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
+        deleteFromOrderButton.setText("Delete from order");
+        deleteFromOrderButton.addActionListener(new DeleteDishButtonController(ordersTable));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("userLogin");
@@ -330,35 +226,35 @@ public class Client extends JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(headerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1)
+                                .addComponent(addFirstDishButton)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton2)
+                                .addComponent(addSecondDishButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3)
+                                .addComponent(addDrinkButton)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton4)
+                                .addComponent(deleteFromOrderButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(12, 12, 12))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -376,7 +272,7 @@ public class Client extends JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(headerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -391,16 +287,16 @@ public class Client extends JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(addFirstDishButton)
+                    .addComponent(addSecondDishButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(addDrinkButton)
+                    .addComponent(deleteFromOrderButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -411,169 +307,6 @@ public class Client extends JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:    
-        if (jTable4.getRowCount() < 1) {
-            JOptionPane.showMessageDialog(this, "Your order is empty. Add a few dishes and try again!");
-            return;
-        }
-        
-        DefaultTableModel ordersTableModel = (DefaultTableModel) jTable4.getModel();
-        long orderId = new Date().getTime();
-        List<Dish> orderDishes = new ArrayList<>();
-        
-        for (int i = 0; i < ordersTableModel.getRowCount(); i++)
-            orderDishes.add(FileDB.getInstance()
-                    .getDishByName(String.valueOf(ordersTableModel.getValueAt(i, 0))));
-        
-        // Check the solvency
-        double amount = orderDishes.stream()
-                .map(Dish::getPrice)
-                .reduce(0.0, (left, right) -> left + right);
-        double clientMoney = user.getMoney();
-
-        if (amount > clientMoney) {
-            JOptionPane.showMessageDialog(this, "Sorry, you don't have enough money.\n" +
-                    "Your money: " + clientMoney + "\n" +
-                    "Amount of your order: " + amount);
-            return;
-        }
-        
-        // Create new order and write it
-        Order order = new Order(orderId, orderDishes, false);
-        
-        FileDB.getInstance().setOrder(order, true);
-        JOptionPane.showMessageDialog(this, "Your order " + orderId +
-                "(" + amount + " UAH) " +
-                "is confirmed.\n" +
-                "The administrator will review it as soon as possible.");
-        
-        // Clean order table
-        for (int i = ordersTableModel.getRowCount() - 1; i >= 0; i--)
-            ordersTableModel.removeRow(i);
-        
-        // Schedule accept notification
-        Timer orderCheckTimer = new Timer(0, (ActionEvent e) -> {
-            boolean notDeclined = FileDB.getInstance().getOrders().stream()
-                    .filter(x -> x.getId() == orderId)
-                    .findFirst()
-                    .isPresent();
-            
-            if (notDeclined) {
-                boolean orderIsAccepted = FileDB.getInstance()
-                    .getOrders()
-                    .stream()
-                    .filter(x -> x.getId() == orderId)
-                    .filter(x -> x.isAccepted())
-                    .findFirst()
-                    .isPresent();
-            
-                if (orderIsAccepted) {
-                    ((Timer)e.getSource()).stop();
-                    JOptionPane.showMessageDialog(this, "Your order " + orderId + " is accepted by administrator!");
-                    
-                    // Schedule payment
-                    Timer billingTimer = new Timer(0, (ActionEvent ae) -> {
-                        FileDB.getInstance().getBills()
-                                .stream()
-                                .filter(x -> x.isRequestedForPayment())
-                                .filter(x -> x.getId_order() == orderId)
-                                .findFirst()
-                                .ifPresent(x -> {
-                                    Payment payment = new Payment(user, order);
-                                    
-                                    payment.setVisible(true);
-                                    ((Timer)ae.getSource()).stop();
-                                });
-                    });
-                    
-                    billingTimer.setDelay(5 * 1000); // sec
-                    billingTimer.start();
-                }
-            } else {
-                ((Timer)e.getSource()).stop();
-                JOptionPane.showMessageDialog(this, "Sorry, but your order " + orderId + " is declined by administrator!");
-            }            
-        });
-        
-        orderCheckTimer.setDelay(5 * 1000); // 10 sec
-        orderCheckTimer.start();
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel firstDishesTableModel = (DefaultTableModel) jTable1.getModel(),
-                orderTableModel = (DefaultTableModel) jTable4.getModel();
-        
-        int selectedRowIndex = jTable1.getSelectedRow();
-        
-        if (selectedRowIndex == -1) {
-            JOptionPane.showMessageDialog(this, "No one first dish selected!");
-            return;
-        }
-        
-        Object[] rowArray = new Object[Dish.VISIBLE_FIELDS_NUMBER];
-        
-        for (int i = 0; i < Dish.VISIBLE_FIELDS_NUMBER; i++)
-            rowArray[i] = firstDishesTableModel.getValueAt(selectedRowIndex, i);
-        
-        orderTableModel.addRow(rowArray);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel secondDishesTableModel = (DefaultTableModel) jTable2.getModel(),
-                orderTableModel = (DefaultTableModel) jTable4.getModel();
-        
-        int selectedRowIndex = jTable2.getSelectedRow();
-        
-        if (selectedRowIndex == -1) {
-            JOptionPane.showMessageDialog(this, "No one second dish selected!");
-            return;
-        }
-        
-        Object[] rowArray = new Object[Dish.VISIBLE_FIELDS_NUMBER];
-        
-        for (int i = 0; i < Dish.VISIBLE_FIELDS_NUMBER; i++)
-            rowArray[i] = secondDishesTableModel.getValueAt(selectedRowIndex, i);
-        
-        orderTableModel.addRow(rowArray);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel drinksTableModel = (DefaultTableModel) jTable3.getModel(),
-                orderTableModel = (DefaultTableModel) jTable4.getModel();
-        
-        int selectedRowIndex = jTable3.getSelectedRow();
-        
-        if (selectedRowIndex == -1) {
-            JOptionPane.showMessageDialog(this, "No one drink selected!");
-            return;
-        }
-        
-        Object[] rowArray = new Object[Dish.VISIBLE_FIELDS_NUMBER];
-        
-        for (int i = 0; i < Dish.VISIBLE_FIELDS_NUMBER; i++)
-            rowArray[i] = drinksTableModel.getValueAt(selectedRowIndex, i);
-        
-        orderTableModel.addRow(rowArray);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel orderTableModel = (DefaultTableModel) jTable4.getModel();
-        
-        int selectedRowIndex = jTable4.getSelectedRow();
-        
-        if (selectedRowIndex == -1) {
-            JOptionPane.showMessageDialog(this, "No one dish selected!");
-            return;
-        }
-        
-        orderTableModel.removeRow(selectedRowIndex);
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -612,12 +345,12 @@ public class Client extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton addFirstDishButton;
+    private javax.swing.JButton addSecondDishButton;
+    private javax.swing.JButton addDrinkButton;
+    private javax.swing.JButton deleteFromOrderButton;
+    private javax.swing.JButton confirmOrderButton;
+    private javax.swing.JLabel headerLabel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -627,9 +360,9 @@ public class Client extends JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
+    private javax.swing.JTable firstDishesTable;
+    private javax.swing.JTable secondDishesTable;
+    private javax.swing.JTable drinksTable;
+    private javax.swing.JTable ordersTable;
     // End of variables declaration//GEN-END:variables
 }
