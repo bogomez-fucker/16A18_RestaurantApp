@@ -64,30 +64,21 @@ public class Order {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Order other = (Order) obj;
-        if (this.id != other.id) {
-            return false;
-        }
-        if (!Objects.equals(this.dishes, other.dishes)) {
-            return false;
-        }
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return id == order.id &&
+                accepted == order.accepted &&
+                Objects.equals(dishes, order.dishes);
     }
 
     @Override
     public String toString() {
-        return "Order{" + "id=" + id + ", dishes=" + dishes + '}';
+        return "Order{" +
+                "id=" + id +
+                ", dishes=" + dishes +
+                ", accepted=" + accepted +
+                '}';
     }
-
-    
 }

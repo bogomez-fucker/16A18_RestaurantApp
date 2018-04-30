@@ -11,6 +11,7 @@ import restaurant.controller.AddDishButtonController;
 import restaurant.controller.ConfirmOrderButtonController;
 import restaurant.controller.DeleteDishButtonController;
 import restaurant.model.*;
+import restaurant.util.Constants;
 import restaurant.util.FileDB;
 
 /**
@@ -59,7 +60,7 @@ public class Client extends JFrame {
             }
         });
 
-        tablesTimer.setDelay(3 * 1000); // 10 sec
+        tablesTimer.setDelay(Constants.UPDATE_DELAY);
         tablesTimer.start();
 
         Timer balanceTimer = new Timer(0, (ActionEvent e) -> {
@@ -73,7 +74,7 @@ public class Client extends JFrame {
                     });
         });
 
-        balanceTimer.setDelay(3 * 1000); // 10 sec
+        balanceTimer.setDelay(Constants.UPDATE_DELAY);
         balanceTimer.start();
     }
 
@@ -143,7 +144,7 @@ public class Client extends JFrame {
         setTitle("Restaurant App | Client");
         setPreferredSize(new Dimension(1000, 1000));
 
-        headerLabel.setFont(new Font("Tahoma", 1, 18)); // NOI18N
+        headerLabel.setFont(new Font("Tahoma", 1, 18));
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setText("Client order panel");
 
@@ -235,19 +236,20 @@ public class Client extends JFrame {
         userLoginLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         userLoginLabel.setText("userLogin");
 
-        hintUserLoginLabel.setFont(new Font("Tahoma", 1, 13)); // NOI18N
+        hintUserLoginLabel.setFont(new Font("Tahoma", 1, 13));
         hintUserLoginLabel.setText("Login:");
 
         userBalanceLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         userBalanceLabel.setText("0.0");
 
-        hintUserBalanceLabel.setFont(new Font("Tahoma", 1, 13)); // NOI18N
+        hintUserBalanceLabel.setFont(new Font("Tahoma", 1, 13));
         hintUserBalanceLabel.setText("Balance:");
 
         // Setup main layout for proper scaling and alignment
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
+        // horizontal positioning of all elements
         layout.setHorizontalGroup(
             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -255,6 +257,7 @@ public class Client extends JFrame {
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addComponent(headerLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(footerPanel, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        // first dishes table + second dishes table
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(firstDishesScrollPane, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
@@ -269,6 +272,7 @@ public class Client extends JFrame {
                                     .addGap(0, 0, Short.MAX_VALUE)
                                     .addComponent(addSecondDishButton)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        // drinks table + orders table
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(drinksScrollPane, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
@@ -285,6 +289,7 @@ public class Client extends JFrame {
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGap(12, 12, 12))
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    // user info
                     .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                         .addComponent(hintUserBalanceLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -295,12 +300,14 @@ public class Client extends JFrame {
                         .addComponent(userBalanceLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGap(15, 15, 15))
         );
+        // vertical positioning of all elements
         layout.setVerticalGroup(
             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(headerLabel)
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    // user info
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(userLoginLabel)
                         .addComponent(hintUserLoginLabel))
@@ -309,6 +316,7 @@ public class Client extends JFrame {
                         .addComponent(userBalanceLabel)
                         .addComponent(hintUserBalanceLabel))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    // tables and buttons
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addComponent(secondDishesScrollPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(firstDishesScrollPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -330,7 +338,7 @@ public class Client extends JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null); // center it on the display when appears
+        setLocationRelativeTo(null); // center on the display when it appears
     }
 
     /**
