@@ -1,0 +1,28 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package restaurant;
+
+import java.util.List;
+import restaurant.model.Dish;
+import restaurant.model.User;
+import restaurant.util.FileDB;
+import restaurant.view.Authorization;
+
+/**
+ *
+ * @author User
+ */
+public class Restaurant {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Authorization authorization = new Authorization();
+        
+        authorization.setVisible(true);
+    }
+}
