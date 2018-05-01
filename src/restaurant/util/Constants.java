@@ -6,5 +6,15 @@ public class Constants {
             "Name", "Description", "Cooking time", "Price"
     };
     public static final int UPDATE_DELAY = 5000; // 5 sec
-    public static final int MENU_VISIBLE_FIELDS = 4;
+    public static final int CLIENT_MENU_VISIBLE_FIELDS = 4;
+
+    public static final int CLIENT_FRAME_WIDTH = 900;
+    public static final int CLIENT_FRAME_HEIGHT = 800;
+    public static final int CLIENT_TABLE_WIDTH = 350;
+    public static final int CLIENT_TABLE_HEIGHT = 350;
+
+    public static final int ADMINISTRATOR_FRAME_WIDTH = 500;
+    public static final int ADMINISTRATOR_FRAME_HEIGHT = 800;
+    public static final int ADMINISTRATOR_TREE_WIDTH = 350;
+    public static final int ADMINISTRATOR_TREE_HEIGHT = 350;
 }

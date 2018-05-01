@@ -13,6 +13,9 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
 import restaurant.controller.AcceptOrdersButtonController;
+import restaurant.controller.CancelBillButtonController;
+import restaurant.controller.DeclineOrdersButtonController;
+import restaurant.controller.RequestPaymentButtonController;
 import restaurant.model.Bill;
 import restaurant.model.Dish;
 import restaurant.model.Order;
@@ -56,7 +59,6 @@ public class Administrator extends JFrame {
                     .collect(Collectors.toList()));
             }
         });
-        
         ordersTimer.setDelay(Constants.UPDATE_DELAY);
         ordersTimer.start();
         
@@ -145,6 +147,7 @@ public class Administrator extends JFrame {
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
+        // init components
         headerLabel = new JLabel();
         ordersScrollPane = new JScrollPane();
         ordersTree = new JTree();
@@ -155,11 +158,14 @@ public class Administrator extends JFrame {
         cancelBillButton = new JButton();
         requestPaymentButton = new JButton();
 
+        // setup frame
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Restaurant App | Administrator");
-        setPreferredSize(new Dimension(500, 800));
+        setPreferredSize(new Dimension(Constants.ADMINISTRATOR_FRAME_WIDTH, Constants.ADMINISTRATOR_FRAME_HEIGHT));
 
-        headerLabel.setFont(new Font("Tahoma", 1, 18));
+        // Setup every component
+
+        headerLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setText("Administrator control panel");
 
@@ -173,24 +179,28 @@ public class Administrator extends JFrame {
         billsScrollPane.setViewportView(billsTree);
 
         declineOrderButton.setText("Decline");
-        declineOrderButton.addActionListener(this::jButton4ActionPerformed);
+        declineOrderButton.addActionListener(new DeclineOrdersButtonController(ordersTree, ordersTimer));
 
         cancelBillButton.setText("Cancel bill");
-        cancelBillButton.addActionListener(this::jButton5ActionPerformed);
+        cancelBillButton.addActionListener(new CancelBillButtonController(billsTree, billsTimer));
 
         requestPaymentButton.setText("Request payment");
-        requestPaymentButton.addActionListener(this::jButton1ActionPerformed);
+        requestPaymentButton.addActionListener(new RequestPaymentButtonController(billsTree, billsTimer));
+
+        // Create and setup main layout
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
+        // setup horizontal positioning
         layout.setHorizontalGroup(
             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(billsScrollPane)
-                    .addComponent(headerLabel, GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
+                    .addComponent(headerLabel,
+                            GroupLayout.DEFAULT_SIZE, Constants.ADMINISTRATOR_TREE_WIDTH, Short.MAX_VALUE)
                     .addComponent(ordersScrollPane)
+                    .addComponent(billsScrollPane)
                     .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -204,19 +214,22 @@ public class Administrator extends JFrame {
                                 .addComponent(cancelBillButton)))))
                 .addContainerGap())
         );
+        // setup vertical positioning
         layout.setVerticalGroup(
             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(headerLabel)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ordersScrollPane, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+                .addComponent(ordersScrollPane,
+                        GroupLayout.DEFAULT_SIZE, Constants.ADMINISTRATOR_TREE_HEIGHT, Short.MAX_VALUE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                     .addComponent(acceptOrderButton)
                     .addComponent(declineOrderButton))
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(billsScrollPane, GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                .addComponent(billsScrollPane,
+                        GroupLayout.DEFAULT_SIZE, Constants.ADMINISTRATOR_TREE_HEIGHT, Short.MAX_VALUE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                     .addComponent(requestPaymentButton)
@@ -226,130 +239,6 @@ public class Administrator extends JFrame {
 
         pack();
         setLocationRelativeTo(null); // center on the display when it appears
-    }
-
-    private void jButton4ActionPerformed(ActionEvent evt) {
-        // Find selected orders
-        TreePath[] selectionPaths = ordersTree.getSelectionPaths();
-        
-        if (selectionPaths == null) {
-            JOptionPane.showMessageDialog(this, "No one order selected!");
-            
-            return;
-        }
-        
-        // Get id of selected orders
-        List<Long> selectedIds = new ArrayList<>();
-        
-        for (TreePath path : selectionPaths) { // for every selected order
-            long orderId = Long.valueOf(String.valueOf(
-                    path.getPath()[1]).split(" ")[1]);
-            
-            selectedIds.add(orderId);
-        }
-        
-        // Filter out declined
-        List<Order> ordersWithoutDeclined = FileDB.getInstance().getOrders()
-                .stream()
-                .filter(x -> !selectedIds.contains(x.getId()))
-                .collect(Collectors.toList());
-        
-        // Write result
-        FileDB.getInstance().setOrders(ordersWithoutDeclined, false);
-        
-        // Redraw orders tree
-        ordersTimer.stop();
-        ordersTimer.start();
-        
-        // Notify user
-        String declinedIdsStr = selectedIds.stream()
-                .map(x -> String.valueOf(x))
-                .collect(Collectors.joining(", "));
-        
-        JOptionPane.showMessageDialog(this, "Orders " + declinedIdsStr + " declined!");
-    }
-
-    private void jButton5ActionPerformed(ActionEvent evt) {
-        // Find selected bills
-        TreePath[] selectionPaths = billsTree.getSelectionPaths();
-        
-        if (selectionPaths == null) {
-            JOptionPane.showMessageDialog(this, "No one bill selected!");
-            
-            return;
-        }
-        
-        // Get selected orders
-        List<Long> selectedIds = new ArrayList<>();
-        
-        for (TreePath path : selectionPaths) { // for every selected order
-            long billId = Long.valueOf(String.valueOf(
-                    path.getPath()[1]).split(" ")[1]);
-            
-            selectedIds.add(billId);
-        }
-        
-        List<Bill> bills = FileDB.getInstance().getBills();
-        
-        bills.stream()
-                .filter(x -> selectedIds.contains(x.getId()))
-                .forEach(x -> {
-                    x.setRequestedForPayment(false);
-                    x.setBilled(true);
-                });
-        
-        // Write out bills
-        FileDB.getInstance().setBills(bills, false);
-
-        // Redraw bills tree
-        billsTimer.stop();
-        billsTimer.start();
-        
-        String selectedIdsStr = selectedIds.stream()
-                .map(x -> String.valueOf(x))
-                .collect(Collectors.joining(", "));
-        
-        JOptionPane.showMessageDialog(this, "Requests for payment " + selectedIdsStr + " are canceled!");
-    }
-
-    private void jButton1ActionPerformed(ActionEvent evt) {
-        // Find selected bills
-        TreePath[] selectionPaths = billsTree.getSelectionPaths();
-        
-        if (selectionPaths == null) {
-            JOptionPane.showMessageDialog(this, "No one bill selected!");
-            
-            return;
-        }
-        
-        // Get selected orders
-        List<Long> selectedIds = new ArrayList<>();
-        
-        for (TreePath path : selectionPaths) { // for every selected order
-            long billId = Long.valueOf(String.valueOf(
-                    path.getPath()[1]).split(" ")[1]);
-            
-            selectedIds.add(billId);
-        }
-        
-        List<Bill> bills = FileDB.getInstance().getBills();
-        
-        bills.stream()
-                .filter(x -> selectedIds.contains(x.getId()))
-                .forEach(x -> x.setRequestedForPayment(true));
-        
-        // Write out bills
-        FileDB.getInstance().setBills(bills, false);
-
-        // Redraw bills tree
-        billsTimer.stop();
-        billsTimer.start();
-        
-        String selectedIdsStr = selectedIds.stream()
-                .map(x -> String.valueOf(x))
-                .collect(Collectors.joining(", "));
-        
-        JOptionPane.showMessageDialog(this, "Bills " + selectedIdsStr + " requested for payment!");
     }
 
     /**
@@ -375,10 +264,7 @@ public class Administrator extends JFrame {
         }
 
         /* Create and display the form */
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Administrator().setVisible(true);
-            }
-        });
+        EventQueue.invokeLater(() ->
+                new Administrator().setVisible(true));
     }
 }

@@ -142,16 +142,17 @@ public class Client extends JFrame {
         // setup frame
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Restaurant App | Client");
-        setPreferredSize(new Dimension(1000, 1000));
+        setPreferredSize(new Dimension(Constants.CLIENT_FRAME_WIDTH, Constants.CLIENT_FRAME_HEIGHT));
 
-        headerLabel.setFont(new Font("Tahoma", 1, 18));
+        headerLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setText("Client order panel");
 
         // Wrap tables into scroll panes and setup tables models
 
         firstDishesScrollPane.setBorder(BorderFactory.createTitledBorder("First dishes"));
-        firstDishesScrollPane.setPreferredSize(new Dimension(460, 400));
+        firstDishesScrollPane.setPreferredSize(new Dimension(Constants.CLIENT_TABLE_WIDTH,
+                Constants.CLIENT_TABLE_HEIGHT));
 
         firstDishesTable.setAutoCreateRowSorter(true);
         firstDishesTable.setModel(new MenuTableModel());
@@ -160,7 +161,8 @@ public class Client extends JFrame {
         firstDishesTable.getColumnModel().getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         secondDishesScrollPane.setBorder(BorderFactory.createTitledBorder("Second dishes"));
-        secondDishesScrollPane.setPreferredSize(new Dimension(460, 400));
+        secondDishesScrollPane.setPreferredSize(new Dimension(Constants.CLIENT_TABLE_WIDTH,
+                Constants.CLIENT_TABLE_HEIGHT));
 
         secondDishesTable.setAutoCreateRowSorter(true);
         secondDishesTable.setModel(new MenuTableModel());
@@ -169,7 +171,7 @@ public class Client extends JFrame {
         secondDishesTable.getColumnModel().getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         drinksScrollPane.setBorder(BorderFactory.createTitledBorder("Drinks"));
-        drinksScrollPane.setPreferredSize(new Dimension(460, 400));
+        drinksScrollPane.setPreferredSize(new Dimension(Constants.CLIENT_TABLE_WIDTH, Constants.CLIENT_TABLE_HEIGHT));
 
         drinksTable.setAutoCreateRowSorter(true);
         drinksTable.setModel(new MenuTableModel());
@@ -180,7 +182,7 @@ public class Client extends JFrame {
         orderScrollPane.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createLineBorder(
                         new Color(0, 51, 255)), "Your order"));
-        orderScrollPane.setPreferredSize(new Dimension(460, 400));
+        orderScrollPane.setPreferredSize(new Dimension(Constants.CLIENT_TABLE_WIDTH, Constants.CLIENT_TABLE_HEIGHT));
 
         ordersTable.setAutoCreateRowSorter(true);
         ordersTable.setModel(new MenuTableModel());
@@ -256,48 +258,60 @@ public class Client extends JFrame {
                     .addContainerGap()
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addComponent(headerLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(footerPanel, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(footerPanel, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
+                                GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         // first dishes table + second dishes table
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                .addComponent(firstDishesScrollPane, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+                                .addComponent(firstDishesScrollPane, GroupLayout.DEFAULT_SIZE,
+                                        Constants.CLIENT_TABLE_WIDTH, Short.MAX_VALUE)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
+                                            GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(addFirstDishButton)
                                     .addGap(0, 0, Short.MAX_VALUE)))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                .addComponent(secondDishesScrollPane, GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+                                .addComponent(secondDishesScrollPane, GroupLayout.DEFAULT_SIZE,
+                                        Constants.CLIENT_TABLE_WIDTH, Short.MAX_VALUE)
                                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addGap(0, 0, Short.MAX_VALUE)
                                     .addComponent(addSecondDishButton)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
+                                            GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         // drinks table + orders table
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                .addComponent(drinksScrollPane, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+                                .addComponent(drinksScrollPane, GroupLayout.DEFAULT_SIZE,
+                                        Constants.CLIENT_TABLE_WIDTH, Short.MAX_VALUE)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
+                                            GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(addDrinkButton)
                                     .addGap(0, 0, Short.MAX_VALUE)))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                .addComponent(orderScrollPane, GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+                                .addComponent(orderScrollPane, GroupLayout.DEFAULT_SIZE,
+                                        Constants.CLIENT_TABLE_WIDTH, Short.MAX_VALUE)
                                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addGap(0, 0, Short.MAX_VALUE)
                                     .addComponent(deleteFromOrderButton)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
+                                            GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGap(12, 12, 12))
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     // user info
                     .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                        .addComponent(hintUserBalanceLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(hintUserLoginLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(hintUserBalanceLabel,
+                                GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(hintUserLoginLabel,
+                                GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                         .addComponent(userLoginLabel, GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                        .addComponent(userBalanceLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(userBalanceLabel,
+                                GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGap(15, 15, 15))
         );
         // vertical positioning of all elements
@@ -318,22 +332,27 @@ public class Client extends JFrame {
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     // tables and buttons
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(secondDishesScrollPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(firstDishesScrollPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(secondDishesScrollPane,
+                                GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(firstDishesScrollPane,
+                                GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGap(1, 1, 1)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(addFirstDishButton)
                         .addComponent(addSecondDishButton))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(drinksScrollPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(orderScrollPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(drinksScrollPane,
+                                GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(orderScrollPane,
+                                GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGap(0, 0, 0)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(addDrinkButton)
                         .addComponent(deleteFromOrderButton))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(footerPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(footerPanel,
+                            GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addContainerGap())
         );
 

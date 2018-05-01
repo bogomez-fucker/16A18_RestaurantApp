@@ -27,9 +27,9 @@ public class AddDishButtonController implements ActionListener {
             return;
         }
 
-        Object[] rowArray = new Object[Constants.MENU_VISIBLE_FIELDS];
+        Object[] rowArray = new Object[Constants.CLIENT_MENU_VISIBLE_FIELDS];
 
-        for (int i = 0; i < Constants.MENU_VISIBLE_FIELDS; i++)
+        for (int i = 0; i < Constants.CLIENT_MENU_VISIBLE_FIELDS; i++)
             rowArray[i] = sourceModel.getValueAt(selectedRowIndex, i);
 
         targetModel.addRow(rowArray);
