@@ -211,9 +211,7 @@ public class Client extends JFrame {
         footerPanelLayout.setVerticalGroup(
             footerPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(footerPanelLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(confirmOrderButton, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addComponent(confirmOrderButton, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
         );
 
         // Setup buttons for every tables(appearance + event handling)
@@ -238,13 +236,13 @@ public class Client extends JFrame {
         userLoginLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         userLoginLabel.setText("userLogin");
 
-        hintUserLoginLabel.setFont(new Font("Tahoma", 1, 13));
+        hintUserLoginLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
         hintUserLoginLabel.setText("Login:");
 
         userBalanceLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         userBalanceLabel.setText("0.0");
 
-        hintUserBalanceLabel.setFont(new Font("Tahoma", 1, 13));
+        hintUserBalanceLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
         hintUserBalanceLabel.setText("Balance:");
 
         // Setup main layout for proper scaling and alignment
@@ -269,13 +267,13 @@ public class Client extends JFrame {
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
                                             GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(addFirstDishButton)
-                                    .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addGap(0, 0, Short.MAX_VALUE))) // centering addFirstDishButton
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(secondDishesScrollPane, GroupLayout.DEFAULT_SIZE,
                                         Constants.CLIENT_TABLE_WIDTH, Short.MAX_VALUE)
                                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(0, 0, Short.MAX_VALUE)
+                                    .addGap(0, 0, Short.MAX_VALUE) // centering addSecondDishButton
                                     .addComponent(addSecondDishButton)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
                                             GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -288,13 +286,13 @@ public class Client extends JFrame {
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
                                             GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(addDrinkButton)
-                                    .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addGap(0, 0, Short.MAX_VALUE))) // centering addDrinkButton
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(orderScrollPane, GroupLayout.DEFAULT_SIZE,
                                         Constants.CLIENT_TABLE_WIDTH, Short.MAX_VALUE)
                                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(0, 0, Short.MAX_VALUE)
+                                    .addGap(0, 0, Short.MAX_VALUE) // centering deleteFromOrderButton
                                     .addComponent(deleteFromOrderButton)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
                                             GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
@@ -346,7 +344,7 @@ public class Client extends JFrame {
                                 GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(orderScrollPane,
                                 GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGap(0, 0, 0)
+                    /*.addGap(0, 0, 0)*/
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(addDrinkButton)
                         .addComponent(deleteFromOrderButton))

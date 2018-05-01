@@ -17,4 +17,6 @@ public class Constants {
     public static final int ADMINISTRATOR_FRAME_HEIGHT = 800;
     public static final int ADMINISTRATOR_TREE_WIDTH = 350;
     public static final int ADMINISTRATOR_TREE_HEIGHT = 350;
+
+    public static final int AUTHORIZATION_FRAME_WIDTH = 180;
 }
