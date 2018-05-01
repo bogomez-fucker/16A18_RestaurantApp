@@ -202,7 +202,6 @@ public class Administrator extends JFrame {
                     .addComponent(ordersScrollPane)
                     .addComponent(billsScrollPane)
                     .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                             .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(acceptOrderButton)
