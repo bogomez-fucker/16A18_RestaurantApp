@@ -13,7 +13,7 @@ import restaurant.model.Bill;
 import restaurant.model.Dish;
 import restaurant.model.Order;
 import restaurant.model.User;
-import restaurant.util.FileDB;
+import restaurant.model.FilesDAO;
 
 /**
  *
@@ -187,16 +187,16 @@ public class Payment extends JFrame {
             return;
         }
         
-        List<User> users = FileDB.getInstance().getUsers();
+        List<User> users = FilesDAO.getInstance().getUsers();
         
         users.stream()
                 .filter(x -> x.equals(user))
                 .forEach(x -> x.setMoney(balance));
         
-        FileDB.getInstance().setUsers(users, false);
+        FilesDAO.getInstance().setUsers(users, false);
         
         // Rewrite bill status
-        List<Bill> bills = FileDB.getInstance().getBills();
+        List<Bill> bills = FilesDAO.getInstance().getBills();
         
         bills.stream()
                 .filter(x -> x.getId_order() == order.getId())
@@ -205,7 +205,7 @@ public class Payment extends JFrame {
                     x.setRequestedForPayment(false);
                 });
         
-        FileDB.getInstance().setBills(bills, false);
+        FilesDAO.getInstance().setBills(bills, false);
         
         // User feedback
         balanceLabel.setText(String.valueOf(balance));

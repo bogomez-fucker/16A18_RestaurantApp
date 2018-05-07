@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import restaurant.util.FileDB;
 
 /**
  *
@@ -34,7 +33,7 @@ public class Order implements Serializable, Cloneable {
         this.dishes = new ArrayList<>();
         
         for (String dishId : fieldsArray[1].split(" "))
-            dishes.add(FileDB.getInstance()
+            dishes.add(FilesDAO.getInstance()
                     .getDishById(Long.valueOf(dishId)));
         
         this.accepted = Boolean.valueOf(fieldsArray[2]);

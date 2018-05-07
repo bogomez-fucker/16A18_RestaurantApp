@@ -3,7 +3,7 @@ package restaurant.controller;
 import restaurant.model.Bill;
 import restaurant.model.Dish;
 import restaurant.model.Order;
-import restaurant.util.FileDB;
+import restaurant.model.FilesDAO;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -48,7 +48,7 @@ public class AcceptOrdersButtonController implements ActionListener {
             acceptedIds.add(orderId);
         }
 
-        List<Order> orders = FileDB.getInstance().getOrders();
+        List<Order> orders = FilesDAO.getInstance().getOrders();
 
         // Change status of accepted orders
         orders.stream()
@@ -56,7 +56,7 @@ public class AcceptOrdersButtonController implements ActionListener {
                 .forEach(x -> x.setAccepted(true));
 
         // Write out orders
-        FileDB.getInstance().setOrders(orders, false);
+        FilesDAO.getInstance().setOrders(orders, false);
 
         // Redraw orders tree
         ordersRefreshTimer.stop();
@@ -89,7 +89,7 @@ public class AcceptOrdersButtonController implements ActionListener {
         }
 
         // Write out bills
-        FileDB.getInstance().setBills(bills, true);
+        FilesDAO.getInstance().setBills(bills, true);
 
         // Redraw bills tree
         billsRefreshTimer.stop();

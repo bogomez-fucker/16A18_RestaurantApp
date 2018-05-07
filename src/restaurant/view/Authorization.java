@@ -2,17 +2,9 @@ package restaurant.view;
 
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import javax.swing.JOptionPane;
 
 import restaurant.controller.LoginButtonController;
-import restaurant.model.User;
 import restaurant.util.Constants;
-import restaurant.util.FileDB;
-
-import static java.awt.event.WindowEvent.WINDOW_CLOSING;
 
 /**
  * @author User

@@ -1,7 +1,7 @@
 package restaurant.controller;
 
 import restaurant.model.Bill;
-import restaurant.util.FileDB;
+import restaurant.model.FilesDAO;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -42,7 +42,7 @@ public class CancelBillButtonController implements ActionListener {
             selectedIds.add(billId);
         }
 
-        List<Bill> bills = FileDB.getInstance().getBills();
+        List<Bill> bills = FilesDAO.getInstance().getBills();
 
         bills.stream()
                 .filter(x -> selectedIds.contains(x.getId()))
@@ -52,7 +52,7 @@ public class CancelBillButtonController implements ActionListener {
                 });
 
         // Write out bills
-        FileDB.getInstance().setBills(bills, false);
+        FilesDAO.getInstance().setBills(bills, false);
 
         // Redraw bills tree
         billsTimer.stop();

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package restaurant.util;
+package restaurant.model;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -18,36 +18,32 @@ import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import restaurant.model.Bill;
-import restaurant.model.Dish;
-import restaurant.model.Order;
-import restaurant.model.User;
 
 /**
  * Singleton implementation of simple file DB that can read/write from files
  * @author User
  */
-public final class FileDB {
+public final class FilesDAO {
     private static final String USERS_FILEPATH = "db/users.tsv";
     private static final String DISHES_FILEPATH = "db/dishes.tsv";
     private static final String ORDERS_FILEPATH = "db/orders.tsv";
     private static final String BILLS_FILEPATH = "db/bills.tsv";
     
-    private static final FileDB _instance = new FileDB();
+    private static final FilesDAO _instance = new FilesDAO();
     
     private ReadWriteLock usersLock;
     private ReadWriteLock dishesLock;
     private ReadWriteLock ordersLock;
     private ReadWriteLock billsLock;
     
-    private FileDB() {
+    private FilesDAO() {
         usersLock = new ReentrantReadWriteLock();
         dishesLock = new ReentrantReadWriteLock();
         ordersLock = new ReentrantReadWriteLock();
         billsLock = new ReentrantReadWriteLock();
     }
         
-    public static synchronized FileDB getInstance() {
+    public static synchronized FilesDAO getInstance() {
         return _instance;
     }
     

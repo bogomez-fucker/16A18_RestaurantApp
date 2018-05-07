@@ -12,7 +12,7 @@ import restaurant.controller.ConfirmOrderButtonController;
 import restaurant.controller.DeleteDishButtonController;
 import restaurant.model.*;
 import restaurant.util.Constants;
-import restaurant.util.FileDB;
+import restaurant.model.FilesDAO;
 
 /**
  * Client GUI
@@ -52,7 +52,7 @@ public class Client extends JFrame {
         userBalanceLabel.setText(String.valueOf(user.getMoney()));
 
         Timer tablesTimer = new Timer(0, (ActionEvent e) -> {
-            List<Dish> dishes = FileDB.getInstance().getDishes();
+            List<Dish> dishes = FilesDAO.getInstance().getDishes();
 
             if (!dishes.equals(lastDishes)) {
                 lastDishes = dishes;
@@ -64,7 +64,7 @@ public class Client extends JFrame {
         tablesTimer.start();
 
         Timer balanceTimer = new Timer(0, (ActionEvent e) -> {
-            FileDB.getInstance().getUsers()
+            FilesDAO.getInstance().getUsers()
                     .stream()
                     .filter(x -> x.getId() == user.getId())
                     .findFirst()

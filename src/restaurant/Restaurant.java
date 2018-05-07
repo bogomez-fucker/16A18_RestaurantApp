@@ -5,10 +5,6 @@
  */
 package restaurant;
 
-import java.util.List;
-import restaurant.model.Dish;
-import restaurant.model.User;
-import restaurant.util.FileDB;
 import restaurant.view.Authorization;
 
 /**

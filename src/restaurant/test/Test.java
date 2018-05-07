@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import restaurant.model.Dish;
 import restaurant.model.User;
-import restaurant.util.FileDB;
+import restaurant.model.FilesDAO;
 
 /**
  *
@@ -18,14 +18,14 @@ import restaurant.util.FileDB;
 public class Test {
     public static void main(String[] args) {
         // Read users from file test
-        for (User u : FileDB.getInstance().getUsers())
+        for (User u : FilesDAO.getInstance().getUsers())
             System.out.println(u);
         
         // Setting dishes test
-        List<Dish> temp = FileDB.getInstance().getDishes();
+        List<Dish> temp = FilesDAO.getInstance().getDishes();
         temp.add(new Dish(1, "adsasd", "random dish", 12.4, 1.1, "type1"));
-        FileDB.getInstance().setDishes(temp, false);
-        temp = FileDB.getInstance().getDishes(); // read again
+        FilesDAO.getInstance().setDishes(temp, false);
+        temp = FilesDAO.getInstance().getDishes(); // read again
         temp = temp.subList(temp.size() - 6, temp.size() - 1);
         for (Dish d : temp)
             System.out.println(d);

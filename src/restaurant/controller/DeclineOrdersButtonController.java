@@ -1,7 +1,7 @@
 package restaurant.controller;
 
 import restaurant.model.Order;
-import restaurant.util.FileDB;
+import restaurant.model.FilesDAO;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -43,13 +43,13 @@ public class DeclineOrdersButtonController implements ActionListener {
         }
 
         // Filter out declined
-        List<Order> ordersWithoutDeclined = FileDB.getInstance().getOrders()
+        List<Order> ordersWithoutDeclined = FilesDAO.getInstance().getOrders()
                 .stream()
                 .filter(x -> !selectedIds.contains(x.getId()))
                 .collect(Collectors.toList());
 
         // Write result
-        FileDB.getInstance().setOrders(ordersWithoutDeclined, false);
+        FilesDAO.getInstance().setOrders(ordersWithoutDeclined, false);
 
         // Redraw orders tree
         ordersTimer.stop();

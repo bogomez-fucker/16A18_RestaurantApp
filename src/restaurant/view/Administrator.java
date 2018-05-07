@@ -5,12 +5,10 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.*;
 import javax.swing.*;
 import javax.swing.Timer;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreePath;
 
 import restaurant.controller.AcceptOrdersButtonController;
 import restaurant.controller.CancelBillButtonController;
@@ -20,7 +18,7 @@ import restaurant.model.Bill;
 import restaurant.model.Dish;
 import restaurant.model.Order;
 import restaurant.util.Constants;
-import restaurant.util.FileDB;
+import restaurant.model.FilesDAO;
 
 /**
  *
@@ -48,7 +46,7 @@ public class Administrator extends JFrame {
     public Administrator() {
         // setup timers
         ordersTimer = new Timer(0, (ActionEvent e) -> {
-            List<Order> orders = FileDB.getInstance().getOrders();
+            List<Order> orders = FilesDAO.getInstance().getOrders();
             
             if (orders.isEmpty())
                 fillOrdersTree(orders); // wipe default data
@@ -63,7 +61,7 @@ public class Administrator extends JFrame {
         ordersTimer.start();
         
         billsTimer = new Timer(0, (ActionEvent e) -> {
-            List<Bill> bills = FileDB.getInstance().getBills();
+            List<Bill> bills = FilesDAO.getInstance().getBills();
             
             if (bills.isEmpty())
                 fillBillsTree(bills); // wipe default data

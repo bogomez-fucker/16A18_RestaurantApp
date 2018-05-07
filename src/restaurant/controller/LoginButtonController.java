@@ -1,7 +1,7 @@
 package restaurant.controller;
 
 import restaurant.model.User;
-import restaurant.util.FileDB;
+import restaurant.model.FilesDAO;
 import restaurant.view.Administrator;
 import restaurant.view.Client;
 
@@ -35,7 +35,7 @@ public class LoginButtonController implements ActionListener {
             return;
         }
 
-        User foundUser = FileDB.getInstance().getUsers()
+        User foundUser = FilesDAO.getInstance().getUsers()
                 .stream()
                 .filter(x -> x.getLogin().equals(enteredLogin))
                 .findFirst()

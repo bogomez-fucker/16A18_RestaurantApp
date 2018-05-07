@@ -4,7 +4,7 @@ import restaurant.model.Bill;
 import restaurant.model.Dish;
 import restaurant.model.Order;
 import restaurant.model.User;
-import restaurant.util.FileDB;
+import restaurant.model.FilesDAO;
 import restaurant.view.Payment;
 
 import javax.swing.*;
@@ -37,7 +37,7 @@ public class ConfirmOrderButtonController implements ActionListener {
         List<Dish> orderDishes = new ArrayList<>();
 
         for (int i = 0; i < ordersTableModel.getRowCount(); i++)
-            orderDishes.add(FileDB.getInstance()
+            orderDishes.add(FilesDAO.getInstance()
                     .getDishByName(String.valueOf(ordersTableModel.getValueAt(i, 0))));
 
         // Check the solvency
@@ -56,7 +56,7 @@ public class ConfirmOrderButtonController implements ActionListener {
         // Create new order and write it
         Order order = new Order(orderId, orderDishes, false);
 
-        FileDB.getInstance().setOrder(order, true);
+        FilesDAO.getInstance().setOrder(order, true);
         JOptionPane.showMessageDialog(null, "Your order " + orderId +
                 "(" + amount + " UAH) " +
                 "is confirmed.\n" +
@@ -68,11 +68,11 @@ public class ConfirmOrderButtonController implements ActionListener {
 
         // Schedule accept notification
         Timer orderCheckTimer = new Timer(0, (ActionEvent e1) -> {
-            boolean notDeclined = FileDB.getInstance().getOrders().stream()
+            boolean notDeclined = FilesDAO.getInstance().getOrders().stream()
                     .anyMatch(x -> x.getId() == orderId);
 
             if (notDeclined) {
-                boolean orderIsAccepted = FileDB.getInstance()
+                boolean orderIsAccepted = FilesDAO.getInstance()
                         .getOrders()
                         .stream()
                         .filter(x -> x.getId() == orderId)
@@ -84,7 +84,7 @@ public class ConfirmOrderButtonController implements ActionListener {
 
                     // Schedule payment
                     Timer billingTimer = new Timer(0, (ActionEvent e2) -> {
-                        FileDB.getInstance().getBills()
+                        FilesDAO.getInstance().getBills()
                                 .stream()
                                 .filter(Bill::isRequestedForPayment)
                                 .filter(x -> x.getId_order() == orderId)
