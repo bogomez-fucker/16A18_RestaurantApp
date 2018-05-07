@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package restaurant.model;
 
 import java.io.BufferedWriter;
@@ -18,16 +13,13 @@ import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import restaurant.util.Constants;
 
 /**
- * Singleton implementation of simple file DB that can read/write from files
+ * Singleton implementation of simple files DAO that providing reading/writing
  * @author User
  */
 public final class FilesDAO {
-    private static final String USERS_FILEPATH = "db/users.tsv";
-    private static final String DISHES_FILEPATH = "db/dishes.tsv";
-    private static final String ORDERS_FILEPATH = "db/orders.tsv";
-    private static final String BILLS_FILEPATH = "db/bills.tsv";
     
     private static final FilesDAO _instance = new FilesDAO();
     
@@ -48,7 +40,7 @@ public final class FilesDAO {
     }
     
     public List<Bill> getBills() {
-        List<String[]> splittedFile = readFileSplittedByTab(BILLS_FILEPATH,
+        List<String[]> splittedFile = readFileSplittedByTab(Constants.BILLS_FILEPATH,
                 Bill.FIELDS_NUMBER, billsLock);
         List<Bill> bills = new ArrayList<>();
         
@@ -66,7 +58,7 @@ public final class FilesDAO {
         try {
             printWriter = new PrintWriter(
                     new BufferedWriter(
-                            new FileWriter(BILLS_FILEPATH, appendData)));
+                            new FileWriter(Constants.BILLS_FILEPATH, appendData)));
             
             for (Bill b : bills) {
                 printWriter.print(b.getId() + "\t");
@@ -85,7 +77,7 @@ public final class FilesDAO {
     }
     
     public List<Order> getOrders() {
-        List<String[]> splittedFile = readFileSplittedByTab(ORDERS_FILEPATH,
+        List<String[]> splittedFile = readFileSplittedByTab(Constants.ORDERS_FILEPATH,
                 Order.FIELDS_NUMBER, ordersLock);
         List<Order> orders = new ArrayList<>();
         
@@ -102,7 +94,7 @@ public final class FilesDAO {
         } else {
             if (orders.isEmpty()) {
                 Executors.newSingleThreadExecutor().execute(() -> {
-                    wipeFile(ORDERS_FILEPATH, ordersLock);
+                    wipeFile(Constants.ORDERS_FILEPATH, ordersLock);
                 });
             }
             
@@ -124,7 +116,7 @@ public final class FilesDAO {
         try {
             printWriter = new PrintWriter(
                     new BufferedWriter(
-                            new FileWriter(ORDERS_FILEPATH, appendData)));
+                            new FileWriter(Constants.ORDERS_FILEPATH, appendData)));
             
             printWriter.print(order.getId() + "\t");
             
@@ -161,7 +153,7 @@ public final class FilesDAO {
     }
     
     public List<Dish> getDishes() {
-        List<String[]> splittedFile = readFileSplittedByTab(DISHES_FILEPATH,
+        List<String[]> splittedFile = readFileSplittedByTab(Constants.DISHES_FILEPATH,
                 Dish.FIELDS_NUMBER, dishesLock);
         List<Dish> dishes = new ArrayList<>();
         
@@ -179,7 +171,7 @@ public final class FilesDAO {
         try {
             printWriter = new PrintWriter(
                     new BufferedWriter(
-                            new FileWriter(DISHES_FILEPATH, appendData)));
+                            new FileWriter(Constants.DISHES_FILEPATH, appendData)));
             
             for (Dish d : dishes) {
                 printWriter.println(d.getId() + "\t" +
@@ -199,7 +191,7 @@ public final class FilesDAO {
     }
     
     public List<User> getUsers() {
-        List<String[]> splittedFile = readFileSplittedByTab(USERS_FILEPATH,
+        List<String[]> splittedFile = readFileSplittedByTab(Constants.USERS_FILEPATH,
                 User.FIELDS_NUMBER, usersLock);
         List<User> users = new ArrayList<>();
         
@@ -217,7 +209,7 @@ public final class FilesDAO {
         try {
             printWriter = new PrintWriter(
                     new BufferedWriter(
-                            new FileWriter(USERS_FILEPATH, appendData)));
+                            new FileWriter(Constants.USERS_FILEPATH, appendData)));
             
             for (User u : users) {
                 printWriter.println(u.getId() + "\t" +
@@ -241,15 +233,9 @@ public final class FilesDAO {
         try {
             lock.writeLock().lock();
             Files.newBufferedWriter(Paths.get(filePath), StandardOpenOption.TRUNCATE_EXISTING).close();
-//            printWriter = new PrintWriter(
-//                    new BufferedWriter(
-//                            new FileWriter(filePath, false)));
-//            printWriter.print("");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-//            printWriter.flush();
-//            printWriter.close();
             lock.writeLock().unlock();
         }
         

@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package restaurant.model;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -12,7 +9,7 @@ import java.util.Objects;
  *
  * @author User
  */
-public class Dish implements Serializable, Cloneable {
+public class Dish implements Serializable, Cloneable, Comparable<Dish> {
     public static final int FIELDS_NUMBER = 6;
     public static final int VISIBLE_FIELDS_NUMBER = 4;
     public static final String TYPE_FIRST = "first";
@@ -106,5 +103,10 @@ public class Dish implements Serializable, Cloneable {
     @Override
     public String toString() {
         return "Dish{" + "id=" + id + ", name=" + name + ", description=" + description + ", cookingTime=" + cookingTime + ", price=" + price + ", type=" + type + '}';
+    }
+
+    @Override
+    public int compareTo(@NotNull Dish o) {
+        return Long.valueOf(this.id - o.id).intValue();
     }
 }

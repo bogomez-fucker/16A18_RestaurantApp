@@ -1,5 +1,6 @@
 package restaurant.model;
 
+import org.jetbrains.annotations.NotNull;
 import restaurant.util.Constants;
 
 import javax.swing.table.DefaultTableModel;
@@ -7,7 +8,7 @@ import java.awt.*;
 import java.io.Serializable;
 import java.util.Arrays;
 
-public class MenuTableModel extends DefaultTableModel implements Serializable, Cloneable {
+public class MenuTableModel extends DefaultTableModel implements Serializable, Cloneable, Comparable<MenuTableModel> {
 
     private Object[] header;
     private Object[][] content;
@@ -25,6 +26,18 @@ public class MenuTableModel extends DefaultTableModel implements Serializable, C
         content = new Object[][]{};
 
         setDataVector(content, header);
+    }
+
+    public Object[] getHeader() {
+        return header;
+    }
+
+    public Object[][] getContent() {
+        return content;
+    }
+
+    public Class[] getTypes() {
+        return types;
     }
 
     public Class getColumnClass(int columnIndex) {
@@ -67,5 +80,10 @@ public class MenuTableModel extends DefaultTableModel implements Serializable, C
                 "header=" + (header == null ? null : Arrays.asList(header)) +
                 ", content=" + (content == null ? null : Arrays.asList(content)) +
                 '}';
+    }
+
+    @Override
+    public int compareTo(@NotNull MenuTableModel o) {
+        return Long.valueOf(this.header.length - o.header.length).intValue();
     }
 }
