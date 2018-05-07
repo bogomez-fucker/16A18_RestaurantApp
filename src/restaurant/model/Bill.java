@@ -5,11 +5,13 @@
  */
 package restaurant.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author User
  */
-public class Bill {
+public class Bill implements Serializable, Cloneable {
     public static final int FIELDS_NUMBER = 5;
     
     private long id;
@@ -60,6 +62,11 @@ public class Bill {
 
     public void setRequestedForPayment(boolean requestedForPayment) {
         this.requestedForPayment = requestedForPayment;
+    }
+
+    @Override
+    public Bill clone() throws CloneNotSupportedException {
+        return (Bill) super.clone();
     }
 
     @Override

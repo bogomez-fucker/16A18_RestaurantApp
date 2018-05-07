@@ -5,13 +5,14 @@
  */
 package restaurant.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author User
  */
-public class User {
+public class User implements Serializable, Cloneable {
     public static final int FIELDS_NUMBER = 5;
     public static final String ROLE_USER = "user";
     public static final String ROLE_ADMIN = "admin";
@@ -61,10 +62,10 @@ public class User {
     public void setMoney(double money) {
         this.money = money;
     }
-    
+
     @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", login=" + login + ", password=" + password + ", role=" + role + ", money=" + money + '}';
+    public User clone() throws CloneNotSupportedException {
+        return (User) super.clone();
     }
 
     @Override
@@ -91,5 +92,10 @@ public class User {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", login=" + login + ", password=" + password + ", role=" + role + ", money=" + money + '}';
     }
 }

@@ -3,8 +3,14 @@ package restaurant.model;
 import restaurant.util.Constants;
 
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.io.Serializable;
+import java.util.Arrays;
 
-public class MenuTableModel extends DefaultTableModel {
+public class MenuTableModel extends DefaultTableModel implements Serializable, Cloneable {
+
+    private Object[] header;
+    private Object[][] content;
 
     private Class[] types = new Class[]{
             String.class, String.class, Double.class, Double.class
@@ -15,8 +21,8 @@ public class MenuTableModel extends DefaultTableModel {
     };
 
     public MenuTableModel() {
-        Object[] header = Constants.DISHES_TABLE_HEADER;
-        Object[][] content = new Object[][]{};
+        header = Constants.DISHES_TABLE_HEADER;
+        content = new Object[][]{};
 
         setDataVector(content, header);
     }
@@ -27,5 +33,39 @@ public class MenuTableModel extends DefaultTableModel {
 
     public boolean isCellEditable(int rowIndex, int columnIndex) {
         return canEdit[columnIndex];
+    }
+
+    @Override
+    public MenuTableModel clone() throws CloneNotSupportedException {
+        return (MenuTableModel) super.clone();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuTableModel that = (MenuTableModel) o;
+        return Arrays.equals(header, that.header) &&
+                Arrays.equals(content, that.content) &&
+                Arrays.equals(types, that.types) &&
+                Arrays.equals(canEdit, that.canEdit);
+    }
+
+    @Override
+    public int hashCode() {
+
+        int result = Arrays.hashCode(header);
+        result = 31 * result + Arrays.hashCode(content);
+        result = 31 * result + Arrays.hashCode(types);
+        result = 31 * result + Arrays.hashCode(canEdit);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "MenuTableModel{" +
+                "header=" + (header == null ? null : Arrays.asList(header)) +
+                ", content=" + (content == null ? null : Arrays.asList(content)) +
+                '}';
     }
 }

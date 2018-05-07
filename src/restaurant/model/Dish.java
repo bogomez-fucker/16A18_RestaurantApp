@@ -5,13 +5,14 @@
  */
 package restaurant.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author User
  */
-public class Dish {
+public class Dish implements Serializable, Cloneable {
     public static final int FIELDS_NUMBER = 6;
     public static final int VISIBLE_FIELDS_NUMBER = 4;
     public static final String TYPE_FIRST = "first";
@@ -65,6 +66,11 @@ public class Dish {
 
     public String getType() {
         return type;
+    }
+
+    @Override
+    public Dish clone() throws CloneNotSupportedException {
+        return (Dish) super.clone();
     }
 
     @Override

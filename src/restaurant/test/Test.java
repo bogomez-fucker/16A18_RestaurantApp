@@ -35,6 +35,6 @@ public class Test {
         Integer sum = numbers.stream()
                 .reduce(10, (left, right) -> left + right);
         
-        System.out.println(sum); //output 11
+        System.out.println(sum); // output 11
     }
 }

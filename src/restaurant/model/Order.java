@@ -5,6 +5,7 @@
  */
 package restaurant.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -14,7 +15,7 @@ import restaurant.util.FileDB;
  *
  * @author User
  */
-public class Order {
+public class Order implements Serializable, Cloneable {
     public static final int FIELDS_NUMBER = 3;
     public static final int VISIBLE_FIELDS_NUMBER = 2;
     
@@ -53,6 +54,11 @@ public class Order {
 
     public void setAccepted(boolean accepted) {
         this.accepted = accepted;
+    }
+
+    @Override
+    public Order clone() throws CloneNotSupportedException {
+        return (Order) super.clone();
     }
 
     @Override
