@@ -118,11 +118,7 @@ public class Payment extends JFrame {
         amountLabel.setText("0.0");
 
         payButton.setText("PAY");
-        payButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        payButton.addActionListener(evt -> jButton1ActionPerformed(evt));
 
         balanceHintLabel.setFont(new Font("Tahoma", 1, 13));
         balanceHintLabel.setText("Your money: ");
@@ -207,36 +203,5 @@ public class Payment extends JFrame {
         balanceLabel.setText(String.valueOf(balance));
         JOptionPane.showMessageDialog(this, "Paid successfully");
         this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        try {
-            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Payment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Payment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Payment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Payment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-        /* Create and display the form */
-        EventQueue.invokeLater(() -> {
-            List<Dish> dishes = new ArrayList<>();
-
-            dishes.add(new Dish(111, "Fish in dish", "desc", 15.08, 99.99, "second"));
-            new Payment(new User(0, "Test User", "abcd", "user", 100.0), new Order(12345, dishes, true)).setVisible(true);
-        });
     }
 }
