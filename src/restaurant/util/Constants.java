@@ -1,5 +1,9 @@
 package restaurant.util;
 
+/**
+ * Holds application constants. In glory to DRY.
+ * @author User
+ */
 public class Constants {
 
     public static final Object[] DISHES_TABLE_HEADER = {

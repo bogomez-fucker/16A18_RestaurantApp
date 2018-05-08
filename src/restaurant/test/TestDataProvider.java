@@ -5,6 +5,10 @@ import restaurant.model.*;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Holds reusable test data and methods. In glory to DRY.
+ * @author User
+ */
 public abstract class TestDataProvider {
 
     /* Serialization + cloneable tests data */

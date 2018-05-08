@@ -3,7 +3,7 @@ package restaurant;
 import restaurant.view.Authorization;
 
 /**
- *
+ * Application entry point.
  * @author User
  */
 public class Restaurant {

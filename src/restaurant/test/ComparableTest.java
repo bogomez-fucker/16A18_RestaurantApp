@@ -4,6 +4,10 @@ import restaurant.model.*;
 
 import java.util.TreeSet;
 
+/**
+ * Test of comparable implementation of models.
+ * @author User
+ */
 public class ComparableTest extends TestDataProvider {
 
     public static void main(String args[]) {

@@ -1,27 +1,26 @@
 package restaurant.view;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-import javax.swing.*;
-import javax.swing.Timer;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-
 import restaurant.controller.AcceptOrdersButtonController;
 import restaurant.controller.CancelBillButtonController;
 import restaurant.controller.DeclineOrdersButtonController;
 import restaurant.controller.RequestPaymentButtonController;
 import restaurant.model.Bill;
 import restaurant.model.Dish;
+import restaurant.model.FilesDAO;
 import restaurant.model.Order;
 import restaurant.util.Constants;
-import restaurant.model.FilesDAO;
+
+import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
- *
+ * Administrator GUI.
  * @author User
  */
 public class Administrator extends JFrame {

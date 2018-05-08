@@ -1,12 +1,13 @@
 package restaurant.view;
 
-import java.awt.*;
-import javax.swing.*;
-
 import restaurant.controller.LoginButtonController;
 import restaurant.util.Constants;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
+ * Authorization GUI.
  * @author User
  */
 public class Authorization extends JFrame {

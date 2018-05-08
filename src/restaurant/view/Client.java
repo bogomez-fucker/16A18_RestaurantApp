@@ -1,21 +1,23 @@
 package restaurant.view;
 
+import restaurant.controller.AddDishButtonController;
+import restaurant.controller.ConfirmOrderButtonController;
+import restaurant.controller.DeleteDishButtonController;
+import restaurant.model.Dish;
+import restaurant.model.FilesDAO;
+import restaurant.model.MenuTableModel;
+import restaurant.model.User;
+import restaurant.util.Constants;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-
-import restaurant.controller.AddDishButtonController;
-import restaurant.controller.ConfirmOrderButtonController;
-import restaurant.controller.DeleteDishButtonController;
-import restaurant.model.*;
-import restaurant.util.Constants;
-import restaurant.model.FilesDAO;
 
 /**
- * Client GUI
+ * Client GUI.
  * @author User
  */
 public class Client extends JFrame {

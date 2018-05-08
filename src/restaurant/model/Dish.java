@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- *
+ * Implements model of Dish.
  * @author User
  */
 public class Dish implements Serializable, Cloneable, Comparable<Dish> {

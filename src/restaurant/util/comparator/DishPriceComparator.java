@@ -4,6 +4,10 @@ import restaurant.model.Dish;
 
 import java.util.Comparator;
 
+/**
+ * Providing comparison of Dishes by price
+ * @author User
+ */
 public class DishPriceComparator implements Comparator<Dish> {
 
     @Override

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- *
+ * Implements model of User.
  * @author User
  */
 public class User implements Serializable, Cloneable, Comparable<User> {

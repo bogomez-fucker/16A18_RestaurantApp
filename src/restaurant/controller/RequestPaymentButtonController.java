@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Controller fires when request payment button clicked.
+ */
 public class RequestPaymentButtonController implements ActionListener {
 
     private JTree billsTree;

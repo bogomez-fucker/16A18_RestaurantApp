@@ -4,6 +4,10 @@ import restaurant.model.*;
 
 import java.io.*;
 
+/**
+ * Test of serialization implementation of models.
+ * @author User
+ */
 public class SerializationTest extends TestDataProvider {
 
     public static void main(String args[]) {

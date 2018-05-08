@@ -1,22 +1,18 @@
 package restaurant.view;
 
-import java.awt.*;
+import restaurant.model.*;
+
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import restaurant.model.Bill;
-import restaurant.model.Dish;
-import restaurant.model.Order;
-import restaurant.model.User;
-import restaurant.model.FilesDAO;
 
 /**
- *
+ * Payment GUI.
  * @author User
  */
 public class Payment extends JFrame {

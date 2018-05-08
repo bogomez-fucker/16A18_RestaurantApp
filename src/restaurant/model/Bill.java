@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.Serializable;
 
 /**
- *
+ * Implements model of Bill.
  * @author User
  */
 public class Bill implements Serializable, Cloneable, Comparable<Bill> {
@@ -16,6 +16,7 @@ public class Bill implements Serializable, Cloneable, Comparable<Bill> {
     private double amount;
     private boolean billed;
     private boolean requestedForPayment;
+
 
     public Bill(long id, long id_order, double amount, boolean billed, boolean requestedForPayment) {
         this.id = id;

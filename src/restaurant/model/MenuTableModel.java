@@ -4,10 +4,13 @@ import org.jetbrains.annotations.NotNull;
 import restaurant.util.Constants;
 
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.io.Serializable;
 import java.util.Arrays;
 
+/**
+ * Implements MenuTableModel for client tables.
+ * @author User
+ */
 public class MenuTableModel extends DefaultTableModel implements Serializable, Cloneable, Comparable<MenuTableModel> {
 
     private Object[] header;

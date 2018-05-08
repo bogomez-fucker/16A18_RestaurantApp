@@ -5,6 +5,9 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controller fires when delete dish button clicked.
+ */
 public class DeleteDishButtonController implements ActionListener {
 
     private JTable targetTable;

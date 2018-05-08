@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- *
+ * Implements model of Order.
  * @author User
  */
 public class Order implements Serializable, Cloneable, Comparable<Order> {

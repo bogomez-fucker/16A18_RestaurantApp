@@ -2,6 +2,10 @@ package restaurant.test;
 
 import restaurant.model.*;
 
+/**
+ * Test of cloneable implementation of models.
+ * @author User
+ */
 public class CloneableTest extends TestDataProvider {
 
     public static void main(String args[]) {

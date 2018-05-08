@@ -1,7 +1,7 @@
 package restaurant.controller;
 
-import restaurant.model.User;
 import restaurant.model.FilesDAO;
+import restaurant.model.User;
 import restaurant.view.Administrator;
 import restaurant.view.Client;
 
@@ -12,6 +12,9 @@ import java.awt.event.WindowEvent;
 
 import static java.awt.event.WindowEvent.WINDOW_CLOSING;
 
+/**
+ * Controller fires when login button clicked.
+ */
 public class LoginButtonController implements ActionListener {
     
     private JTextField loginField;

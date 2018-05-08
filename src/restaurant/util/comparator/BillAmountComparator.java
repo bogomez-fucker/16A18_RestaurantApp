@@ -4,6 +4,10 @@ import restaurant.model.Bill;
 
 import java.util.Comparator;
 
+/**
+ * Providing comparison of Bills by amount
+ * @author User
+ */
 public class BillAmountComparator implements Comparator<Bill> {
 
     @Override

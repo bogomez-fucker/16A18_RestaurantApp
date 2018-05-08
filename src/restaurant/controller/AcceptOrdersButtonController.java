@@ -2,8 +2,8 @@ package restaurant.controller;
 
 import restaurant.model.Bill;
 import restaurant.model.Dish;
-import restaurant.model.Order;
 import restaurant.model.FilesDAO;
+import restaurant.model.Order;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -14,6 +14,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Controller fires when accept orders button clicked.
+ */
 public class AcceptOrdersButtonController implements ActionListener {
 
     private JTree ordersTree;

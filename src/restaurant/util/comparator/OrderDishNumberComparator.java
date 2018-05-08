@@ -4,6 +4,10 @@ import restaurant.model.Order;
 
 import java.util.Comparator;
 
+/**
+ * Providing comparison of orders by number of its dishes.
+ * @author User
+ */
 public class OrderDishNumberComparator implements Comparator<Order> {
 
     @Override

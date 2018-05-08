@@ -1,18 +1,15 @@
 package restaurant.test;
 
-import java.awt.*;
-import java.util.Arrays;
-import java.util.List;
-import restaurant.model.Dish;
 import restaurant.model.User;
-import restaurant.model.FilesDAO;
 import restaurant.view.Administrator;
 import restaurant.view.Client;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
- *
+ * Test of application functionality running Client and Administrator GUIs without authorization.
+ * Used temp data.
  * @author User
  */
 public class AppTest {

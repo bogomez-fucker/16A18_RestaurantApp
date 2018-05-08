@@ -1,7 +1,7 @@
 package restaurant.controller;
 
-import restaurant.model.Order;
 import restaurant.model.FilesDAO;
+import restaurant.model.Order;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Controller fires when decline order button clicked.
+ */
 public class DeclineOrdersButtonController implements ActionListener {
 
     private JTree ordersTree;

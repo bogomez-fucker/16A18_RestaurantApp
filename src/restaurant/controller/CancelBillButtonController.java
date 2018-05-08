@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Controller fires when cancel bill button clicked.
+ */
 public class CancelBillButtonController implements ActionListener {
 
     private JTree billsTree;

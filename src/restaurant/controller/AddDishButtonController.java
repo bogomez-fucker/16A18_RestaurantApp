@@ -7,6 +7,9 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controller fires when add dish button clicked.
+ */
 public class AddDishButtonController implements ActionListener {
     private JTable sourceTable;
     private DefaultTableModel targetModel;

@@ -6,6 +6,10 @@ import restaurant.util.comparator.*;
 import java.util.Arrays;
 import java.util.TreeSet;
 
+/**
+ * Test of comparators for models.
+ * @author User
+ */
 public class ComparatorTest extends TestDataProvider {
 
     public static void main(String args[]) {

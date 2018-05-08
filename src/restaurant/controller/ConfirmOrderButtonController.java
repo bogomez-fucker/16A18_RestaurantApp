@@ -1,10 +1,6 @@
 package restaurant.controller;
 
-import restaurant.model.Bill;
-import restaurant.model.Dish;
-import restaurant.model.Order;
-import restaurant.model.User;
-import restaurant.model.FilesDAO;
+import restaurant.model.*;
 import restaurant.view.Payment;
 
 import javax.swing.*;
@@ -15,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Controller fires when confirm order button clicked.
+ */
 public class ConfirmOrderButtonController implements ActionListener {
 
     private User user;
