@@ -28,6 +28,13 @@ public class MenuTableModel extends DefaultTableModel implements Serializable, C
         setDataVector(content, header);
     }
 
+    public MenuTableModel(Object[] customHeader) {
+        header = customHeader;
+        content = new Object[][]{};
+
+        setDataVector(content, header);
+    }
+
     public Object[] getHeader() {
         return header;
     }
