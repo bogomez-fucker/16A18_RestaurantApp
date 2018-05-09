@@ -19,7 +19,7 @@ public class Utils {
         int pointIndex = decimal.indexOf(".");
         int digitsAfterPoint = decimal.length() - 1 - pointIndex;
 
-        if (leaveAfterPoint > digitsAfterPoint)
+        if (leaveAfterPoint >= digitsAfterPoint)
             return decimal;
 
         return decimal.substring(0, pointIndex + 1 + leaveAfterPoint);

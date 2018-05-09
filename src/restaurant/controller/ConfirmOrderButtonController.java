@@ -1,6 +1,7 @@
 package restaurant.controller;
 
 import restaurant.model.*;
+import restaurant.util.Utils;
 import restaurant.view.Payment;
 
 import javax.swing.*;
@@ -47,8 +48,8 @@ public class ConfirmOrderButtonController implements ActionListener {
 
         if (amount > clientMoney) {
             JOptionPane.showMessageDialog(null, "Sorry, you don't have enough money.\n" +
-                    "Your money: " + clientMoney + "\n" +
-                    "Amount of your order: " + amount);
+                    "Your money: " + Utils.digitsAfterPoint(String.valueOf(clientMoney), 2) + "\n" +
+                    "Amount of your order: " + Utils.digitsAfterPoint(String.valueOf(amount), 2));
             return;
         }
 
@@ -57,7 +58,7 @@ public class ConfirmOrderButtonController implements ActionListener {
 
         FilesDAO.getInstance().setOrder(order, true);
         JOptionPane.showMessageDialog(null, "Your order " + orderId +
-                "(" + amount + " UAH) " +
+                "(" + Utils.digitsAfterPoint(String.valueOf(amount), 2) + " UAH) " +
                 "is confirmed.\n" +
                 "The administrator will review it as soon as possible.");
 

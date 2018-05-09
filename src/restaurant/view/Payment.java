@@ -38,7 +38,7 @@ public class Payment extends JFrame {
                 .reduce(0.0, (left, right) -> left + right);
         
         balanceLabel.setText(Utils.digitsAfterPoint(String.valueOf(user.getMoney()), 2));
-        amountLabel.setText(String.valueOf(amount));
+        amountLabel.setText(Utils.digitsAfterPoint(String.valueOf(amount), 2));
         
         DefaultTableModel tableModel = (DefaultTableModel) orderTable.getModel();
         
@@ -84,28 +84,13 @@ public class Payment extends JFrame {
         orderTableScrollPane.setBorder(BorderFactory.createTitledBorder("Your order"));
 
         orderTable.setAutoCreateRowSorter(true);
-        orderTable.setModel(new DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Name", "Description", "Cooking time", "Price"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        orderTable.setModel(new MenuTableModel());
         orderTableScrollPane.setViewportView(orderTable);
 
         amountHintLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
         amountHintLabel.setText("Amount: ");
 
-        amountLabel.setText("0.0");
+        amountLabel.setText(Utils.digitsAfterPoint("0.0", 2));
 
         payButton.setText("PAY");
         payButton.addActionListener(new PayButtonController(user, order, balanceLabel, this));

@@ -9,6 +9,7 @@ import restaurant.model.Dish;
 import restaurant.model.FilesDAO;
 import restaurant.model.Order;
 import restaurant.util.Constants;
+import restaurant.util.Utils;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -91,7 +92,7 @@ public class Administrator extends JFrame {
         
         for (Bill b : bills) {
             DefaultMutableTreeNode billNode = new DefaultMutableTreeNode("Bill " + b.getId() +
-                    " = " + b.getAmount() + " UAH");
+                    " = " + Utils.digitsAfterPoint(String.valueOf(b.getAmount()), 2) + " UAH");
             
             billNode.add(new DefaultMutableTreeNode("id: " + b.getId()));
             billNode.add(new DefaultMutableTreeNode("order id: " + b.getId_order()));
