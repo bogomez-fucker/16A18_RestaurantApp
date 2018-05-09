@@ -347,7 +347,6 @@ public class Client extends JFrame {
                                 GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(orderScrollPane,
                                 GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    /*.addGap(0, 0, 0)*/
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(addDrinkButton)
                         .addComponent(deleteFromOrderButton))

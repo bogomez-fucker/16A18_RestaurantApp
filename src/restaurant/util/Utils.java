@@ -31,7 +31,7 @@ public class Utils {
     /**
      * Calculates amount of specified order.
      * @param order order which amount we will calculate.
-     * @return
+     * @return order amount
      */
     public static double getAmount(Order order) {
         return order.getDishes().stream()

@@ -63,6 +63,7 @@ public class Payment extends JFrame {
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
+        // init components
         headerLabel = new JLabel();
         orderTableScrollPane = new JScrollPane();
         orderTable = new JTable();
@@ -72,6 +73,7 @@ public class Payment extends JFrame {
         balanceHintLabel = new JLabel();
         balanceLabel = new JLabel();
 
+        // setup frame
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Restaurant App | Payment");
 
@@ -81,10 +83,12 @@ public class Payment extends JFrame {
 
         orderTableScrollPane.setBorder(BorderFactory.createTitledBorder("Your order"));
 
+        // Wrap table into scroll panes and setup table model
         orderTable.setAutoCreateRowSorter(true);
         orderTable.setModel(new MenuTableModel());
         orderTableScrollPane.setViewportView(orderTable);
 
+        // Labels and button setup
         amountHintLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
         amountHintLabel.setText("Amount: ");
 
@@ -98,8 +102,11 @@ public class Payment extends JFrame {
 
         balanceLabel.setText(Utils.digitsAfterPoint("0.0", 2));
 
+        // Setup main layout
+
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
+        // horizontal alignment on scaling
         layout.setHorizontalGroup(
             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -116,11 +123,13 @@ public class Payment extends JFrame {
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(balanceLabel))
                     .addGroup(layout.createSequentialGroup()
+                        // center payButton with zero gaps
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(payButton, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
+        // vertical alignment on scaling
         layout.setVerticalGroup(
             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -140,6 +149,6 @@ public class Payment extends JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null); // center on the display when it appears
     }
 }
