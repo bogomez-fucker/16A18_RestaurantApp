@@ -13,10 +13,12 @@ import java.awt.event.ActionListener;
 public class AddDishButtonController implements ActionListener {
     private JTable sourceTable;
     private DefaultTableModel targetModel;
+    private JFrame frame;
 
-    public AddDishButtonController(JTable sourceTable, DefaultTableModel targetModel) {
+    public AddDishButtonController(JTable sourceTable, DefaultTableModel targetModel, JFrame frame) {
         this.sourceTable = sourceTable;
         this.targetModel = targetModel;
+        this.frame = frame;
     }
 
     @Override
@@ -26,7 +28,7 @@ public class AddDishButtonController implements ActionListener {
         int selectedRowIndex = sourceTable.getSelectedRow();
 
         if (selectedRowIndex == -1) {
-            JOptionPane.showMessageDialog(null, "No one dish selected!");
+            JOptionPane.showMessageDialog(frame, "No one dish selected!");
             return;
         }
 

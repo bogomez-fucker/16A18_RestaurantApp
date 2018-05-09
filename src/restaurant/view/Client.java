@@ -198,7 +198,7 @@ public class Client extends JFrame {
         footerPanel.setAlignmentY(Component.CENTER_ALIGNMENT);
 
         confirmOrderButton.setText("Confirm order");
-        confirmOrderButton.addActionListener(new ConfirmOrderButtonController(user, ordersTable));
+        confirmOrderButton.addActionListener(new ConfirmOrderButtonController(user, ordersTable, this));
 
         GroupLayout footerPanelLayout = new GroupLayout(footerPanel);
         footerPanel.setLayout(footerPanelLayout);
@@ -221,18 +221,18 @@ public class Client extends JFrame {
 
         addFirstDishButton.setText("Add first dish");
         addFirstDishButton.addActionListener(new AddDishButtonController(firstDishesTable,
-                (DefaultTableModel) ordersTable.getModel()));
+                (DefaultTableModel) ordersTable.getModel(), this));
 
         addSecondDishButton.setText("Add second dish");
         addSecondDishButton.addActionListener(new AddDishButtonController(secondDishesTable,
-                (DefaultTableModel) ordersTable.getModel()));
+                (DefaultTableModel) ordersTable.getModel(), this));
 
         addDrinkButton.setText("Add drink");
         addDrinkButton.addActionListener(new AddDishButtonController(drinksTable,
-                (DefaultTableModel) ordersTable.getModel()));
+                (DefaultTableModel) ordersTable.getModel(), this));
 
         deleteFromOrderButton.setText("Delete from order");
-        deleteFromOrderButton.addActionListener(new DeleteDishButtonController(ordersTable));
+        deleteFromOrderButton.addActionListener(new DeleteDishButtonController(ordersTable, this));
 
         // Setup user profile info
 

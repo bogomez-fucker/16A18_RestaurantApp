@@ -19,16 +19,18 @@ public class ConfirmOrderButtonController implements ActionListener {
 
     private User user;
     private JTable orderTable;
+    private JFrame frame;
 
-    public ConfirmOrderButtonController(User user, JTable orderTable) {
+    public ConfirmOrderButtonController(User user, JTable orderTable, JFrame frame) {
         this.user = user;
         this.orderTable = orderTable;
+        this.frame = frame;
     }
 
     @Override
     public void actionPerformed(ActionEvent e0) {
         if (orderTable.getRowCount() < 1) {
-            JOptionPane.showMessageDialog(null, "Your order is empty. Add a few dishes and try again!");
+            JOptionPane.showMessageDialog(frame, "Your order is empty. Add a few dishes and try again!");
             return;
         }
 
@@ -47,7 +49,7 @@ public class ConfirmOrderButtonController implements ActionListener {
         double clientMoney = user.getMoney();
 
         if (amount > clientMoney) {
-            JOptionPane.showMessageDialog(null, "Sorry, you don't have enough money.\n" +
+            JOptionPane.showMessageDialog(frame, "Sorry, you don't have enough money.\n" +
                     "Your money: " + Utils.digitsAfterPoint(String.valueOf(clientMoney), 2) + "\n" +
                     "Amount of your order: " + Utils.digitsAfterPoint(String.valueOf(amount), 2));
             return;
@@ -57,7 +59,7 @@ public class ConfirmOrderButtonController implements ActionListener {
         Order order = new Order(orderId, orderDishes, false);
 
         FilesDAO.getInstance().setOrder(order, true);
-        JOptionPane.showMessageDialog(null, "Your order " + orderId +
+        JOptionPane.showMessageDialog(frame, "Your order " + orderId +
                 "(" + Utils.digitsAfterPoint(String.valueOf(amount), 2) + " UAH) " +
                 "is confirmed.\n" +
                 "The administrator will review it as soon as possible.");
@@ -80,7 +82,7 @@ public class ConfirmOrderButtonController implements ActionListener {
 
                 if (orderIsAccepted) {
                     ((Timer)e1.getSource()).stop();
-                    JOptionPane.showMessageDialog(null, "Your order " + orderId + " is accepted by administrator!");
+                    JOptionPane.showMessageDialog(frame, "Your order " + orderId + " is accepted by administrator!");
 
                     // Schedule payment
                     Timer billingTimer = new Timer(0, (ActionEvent e2) -> {
@@ -92,6 +94,7 @@ public class ConfirmOrderButtonController implements ActionListener {
                                 .ifPresent(x -> {
                                     Payment payment = new Payment(user, order);
 
+                                    payment.setLocationRelativeTo(frame);
                                     payment.setVisible(true);
                                     ((Timer)e2.getSource()).stop();
                                 });
@@ -102,7 +105,7 @@ public class ConfirmOrderButtonController implements ActionListener {
                 }
             } else {
                 ((Timer)e1.getSource()).stop();
-                JOptionPane.showMessageDialog(null, "Sorry, but your order " + orderId + " is declined by administrator!");
+                JOptionPane.showMessageDialog(frame, "Sorry, but your order " + orderId + " is declined by administrator!");
             }
         });
 

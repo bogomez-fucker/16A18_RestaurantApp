@@ -22,12 +22,15 @@ public class AcceptOrdersButtonController implements ActionListener {
     private JTree ordersTree;
     private Timer ordersRefreshTimer;
     private Timer billsRefreshTimer;
+    private JFrame frame;
 
 
-    public AcceptOrdersButtonController(JTree ordersTree, Timer ordersRefreshTimer, Timer billsRefreshTimer) {
+    public AcceptOrdersButtonController(JTree ordersTree, Timer ordersRefreshTimer,
+                                        Timer billsRefreshTimer, JFrame frame) {
         this.ordersTree = ordersTree;
         this.ordersRefreshTimer = ordersRefreshTimer;
         this.billsRefreshTimer = billsRefreshTimer;
+        this.frame = frame;
     }
 
     @Override
@@ -37,7 +40,7 @@ public class AcceptOrdersButtonController implements ActionListener {
         TreePath[] selectionPaths = ordersTree.getSelectionPaths();
 
         if (selectionPaths == null) {
-            JOptionPane.showMessageDialog(null, "No one order selected!");
+            JOptionPane.showMessageDialog(frame, "No one order selected!");
 
             return;
         }
@@ -102,6 +105,6 @@ public class AcceptOrdersButtonController implements ActionListener {
                 .map(String::valueOf)
                 .collect(Collectors.joining(", "));
 
-        JOptionPane.showMessageDialog(null, "Orders " + acceptedIdsStr + " accepted!");
+        JOptionPane.showMessageDialog(frame, "Orders " + acceptedIdsStr + " accepted!");
     }
 }

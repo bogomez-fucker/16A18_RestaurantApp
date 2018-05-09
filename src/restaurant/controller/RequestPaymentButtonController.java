@@ -18,10 +18,12 @@ public class RequestPaymentButtonController implements ActionListener {
 
     private JTree billsTree;
     private Timer billsTimer;
+    private JFrame frame;
 
-    public RequestPaymentButtonController(JTree billsTree, Timer billsTimer) {
+    public RequestPaymentButtonController(JTree billsTree, Timer billsTimer, JFrame frame) {
         this.billsTree = billsTree;
         this.billsTimer = billsTimer;
+        this.frame = frame;
     }
 
     @Override
@@ -30,7 +32,7 @@ public class RequestPaymentButtonController implements ActionListener {
         TreePath[] selectionPaths = billsTree.getSelectionPaths();
 
         if (selectionPaths == null) {
-            JOptionPane.showMessageDialog(null,
+            JOptionPane.showMessageDialog(frame,
                     "No one bill selected!");
             return;
         }
@@ -62,7 +64,7 @@ public class RequestPaymentButtonController implements ActionListener {
                 .map(String::valueOf)
                 .collect(Collectors.joining(", "));
 
-        JOptionPane.showMessageDialog(null,
+        JOptionPane.showMessageDialog(frame,
                 "Bills " + selectedIdsStr + " requested for payment!");
     }
 }

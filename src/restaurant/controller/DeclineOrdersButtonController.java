@@ -18,10 +18,12 @@ public class DeclineOrdersButtonController implements ActionListener {
 
     private JTree ordersTree;
     private Timer ordersTimer;
+    private JFrame frame;
 
-    public DeclineOrdersButtonController(JTree ordersTree, Timer ordersTimer) {
+    public DeclineOrdersButtonController(JTree ordersTree, Timer ordersTimer, JFrame frame) {
         this.ordersTree = ordersTree;
         this.ordersTimer = ordersTimer;
+        this.frame = frame;
     }
 
     @Override
@@ -30,7 +32,7 @@ public class DeclineOrdersButtonController implements ActionListener {
         TreePath[] selectionPaths = ordersTree.getSelectionPaths();
 
         if (selectionPaths == null) {
-            JOptionPane.showMessageDialog(null, "No one order selected!");
+            JOptionPane.showMessageDialog(frame, "No one order selected!");
 
             return;
         }
@@ -63,6 +65,6 @@ public class DeclineOrdersButtonController implements ActionListener {
                 .map(x -> String.valueOf(x))
                 .collect(Collectors.joining(", "));
 
-        JOptionPane.showMessageDialog(null, "Orders " + declinedIdsStr + " declined!");
+        JOptionPane.showMessageDialog(frame, "Orders " + declinedIdsStr + " declined!");
     }
 }

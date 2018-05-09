@@ -171,19 +171,20 @@ public class Administrator extends JFrame {
         ordersScrollPane.setViewportView(ordersTree);
 
         acceptOrderButton.setText("Accept");
-        acceptOrderButton.addActionListener(new AcceptOrdersButtonController(ordersTree, ordersTimer, billsTimer));
+        acceptOrderButton.addActionListener(new AcceptOrdersButtonController(ordersTree, ordersTimer,
+                billsTimer, this));
 
         billsScrollPane.setBorder(BorderFactory.createTitledBorder("Active bills"));
         billsScrollPane.setViewportView(billsTree);
 
         declineOrderButton.setText("Decline");
-        declineOrderButton.addActionListener(new DeclineOrdersButtonController(ordersTree, ordersTimer));
+        declineOrderButton.addActionListener(new DeclineOrdersButtonController(ordersTree, ordersTimer, this));
 
         cancelBillButton.setText("Cancel bill");
-        cancelBillButton.addActionListener(new CancelBillButtonController(billsTree, billsTimer));
+        cancelBillButton.addActionListener(new CancelBillButtonController(billsTree, billsTimer, this));
 
         requestPaymentButton.setText("Request payment");
-        requestPaymentButton.addActionListener(new RequestPaymentButtonController(billsTree, billsTimer));
+        requestPaymentButton.addActionListener(new RequestPaymentButtonController(billsTree, billsTimer, this));
 
         // Create and setup main layout
 

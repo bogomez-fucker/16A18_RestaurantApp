@@ -18,10 +18,12 @@ public class CancelBillButtonController implements ActionListener {
 
     private JTree billsTree;
     private Timer billsTimer;
+    private JFrame frame;
 
-    public CancelBillButtonController(JTree billsTree, Timer billsTimer) {
+    public CancelBillButtonController(JTree billsTree, Timer billsTimer, JFrame frame) {
         this.billsTree = billsTree;
         this.billsTimer = billsTimer;
+        this.frame = frame;
     }
 
     @Override
@@ -30,7 +32,7 @@ public class CancelBillButtonController implements ActionListener {
         TreePath[] selectionPaths = billsTree.getSelectionPaths();
 
         if (selectionPaths == null) {
-            JOptionPane.showMessageDialog(null,"No one bill selected!");
+            JOptionPane.showMessageDialog(frame,"No one bill selected!");
 
             return;
         }
@@ -65,7 +67,7 @@ public class CancelBillButtonController implements ActionListener {
                 .map(String::valueOf)
                 .collect(Collectors.joining(", "));
 
-        JOptionPane.showMessageDialog(null,
+        JOptionPane.showMessageDialog(frame,
                 "Bills " + selectedIdsStr + " are canceled!");
     }
 }

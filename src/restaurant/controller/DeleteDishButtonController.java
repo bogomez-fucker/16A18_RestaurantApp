@@ -11,9 +11,11 @@ import java.awt.event.ActionListener;
 public class DeleteDishButtonController implements ActionListener {
 
     private JTable targetTable;
+    private JFrame frame;
 
-    public DeleteDishButtonController(JTable targetTable) {
+    public DeleteDishButtonController(JTable targetTable, JFrame frame) {
         this.targetTable = targetTable;
+        this.frame = frame;
     }
 
     @Override
@@ -23,7 +25,7 @@ public class DeleteDishButtonController implements ActionListener {
         int selectedRowIndex = targetTable.getSelectedRow();
 
         if (selectedRowIndex == -1) {
-            JOptionPane.showMessageDialog(null, "No one dish selected!");
+            JOptionPane.showMessageDialog(frame, "No one dish selected!");
             return;
         }
 
