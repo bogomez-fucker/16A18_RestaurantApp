@@ -33,9 +33,7 @@ public class Payment extends JFrame {
         this.order = order;
         initComponents();
         
-        double amount = order.getDishes().stream()
-                .map(Dish::getPrice)
-                .reduce(0.0, (left, right) -> left + right);
+        double amount = Utils.getAmount(order);
         
         balanceLabel.setText(Utils.digitsAfterPoint(String.valueOf(user.getMoney()), 2));
         amountLabel.setText(Utils.digitsAfterPoint(String.valueOf(amount), 2));

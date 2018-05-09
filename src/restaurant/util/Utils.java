@@ -1,5 +1,8 @@
 package restaurant.util;
 
+import restaurant.model.Dish;
+import restaurant.model.Order;
+
 /**
  * Class with useful methods.
  * @author User
@@ -23,5 +26,16 @@ public class Utils {
             return decimal;
 
         return decimal.substring(0, pointIndex + 1 + leaveAfterPoint);
+    }
+
+    /**
+     * Calculates amount of specified order.
+     * @param order order which amount we will calculate.
+     * @return
+     */
+    public static double getAmount(Order order) {
+        return order.getDishes().stream()
+                .map(Dish::getPrice)
+                .reduce(0.0, (left, right) -> left + right);
     }
 }

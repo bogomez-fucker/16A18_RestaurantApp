@@ -29,7 +29,7 @@ public class PayButtonController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // Rewrite user balance
-        double balance = user.getMoney() - getAmount(order);
+        double balance = user.getMoney() - Utils.getAmount(order);
 
         if (balance < 0.0) {
             JOptionPane.showMessageDialog(frame, "You have not enough money");
@@ -60,11 +60,5 @@ public class PayButtonController implements ActionListener {
         balanceLabel.setText(Utils.digitsAfterPoint(String.valueOf(balance), 2));
         JOptionPane.showMessageDialog(frame, "Paid successfully");
         frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
-    }
-
-    private double getAmount(Order order) {
-        return order.getDishes().stream()
-                .map(Dish::getPrice)
-                .reduce(0.0, (left, right) -> left + right);
     }
 }
