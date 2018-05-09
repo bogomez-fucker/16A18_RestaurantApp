@@ -8,6 +8,7 @@ import restaurant.model.FilesDAO;
 import restaurant.model.MenuTableModel;
 import restaurant.model.User;
 import restaurant.util.Constants;
+import restaurant.util.Utils;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -51,7 +52,7 @@ public class Client extends JFrame {
         initComponents();
 
         userLoginLabel.setText(user.getLogin());
-        userBalanceLabel.setText(String.valueOf(user.getMoney()));
+        userBalanceLabel.setText(Utils.digitsAfterPoint(String.valueOf(user.getMoney()),2));
 
         Timer tablesTimer = new Timer(0, (ActionEvent e) -> {
             List<Dish> dishes = FilesDAO.getInstance().getDishes();
@@ -72,7 +73,7 @@ public class Client extends JFrame {
                     .findFirst()
                     .ifPresent(x -> {
                         user.setMoney(x.getMoney());
-                        userBalanceLabel.setText(String.valueOf(user.getMoney()));
+                        userBalanceLabel.setText(Utils.digitsAfterPoint(String.valueOf(user.getMoney()), 2));
                     });
         });
 
@@ -242,7 +243,7 @@ public class Client extends JFrame {
         hintUserLoginLabel.setText("Login:");
 
         userBalanceLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-        userBalanceLabel.setText("0.0");
+        userBalanceLabel.setText(Utils.digitsAfterPoint("0.0", 2));
 
         hintUserBalanceLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
         hintUserBalanceLabel.setText("Balance:");

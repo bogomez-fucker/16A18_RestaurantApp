@@ -33,7 +33,7 @@ public class LoginButtonController implements ActionListener {
         String enteredPass = String.valueOf(passwordField.getPassword());
 
         if (enteredLogin.isEmpty() || enteredPass.isEmpty()) {
-            JOptionPane.showMessageDialog(null,
+            JOptionPane.showMessageDialog(frame,
                     "Enter login, password and THEN press \"Login\" button");
             return;
         }
@@ -45,9 +45,9 @@ public class LoginButtonController implements ActionListener {
                 .orElse(null);
 
         if (foundUser == null)
-            JOptionPane.showMessageDialog(null, "No user \"" + enteredLogin + "\" found");
+            JOptionPane.showMessageDialog(frame, "No user \"" + enteredLogin + "\" found");
         else if (!foundUser.getPassword().equals(enteredPass))
-            JOptionPane.showMessageDialog(null, "Password is not corrrect");
+            JOptionPane.showMessageDialog(frame, "Password is not corrrect");
         else
         if (foundUser.getRole().equals(User.ROLE_USER)) {
             Client userGUI = new Client(foundUser);
@@ -62,7 +62,7 @@ public class LoginButtonController implements ActionListener {
             administrator.setVisible(true);
             frame.dispose();
         } else {
-            JOptionPane.showMessageDialog(null,
+            JOptionPane.showMessageDialog(frame,
                     "Not recognized user role \"" + foundUser.getRole() + "\". Exiting...");
             frame.dispatchEvent(new WindowEvent(frame, WINDOW_CLOSING));
         }
