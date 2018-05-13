@@ -2,6 +2,9 @@ package restaurant.util;
 
 import restaurant.model.Dish;
 import restaurant.model.Order;
+import restaurant.view.Administrator;
+
+import javax.swing.*;
 
 /**
  * Class with useful methods.
@@ -37,5 +40,27 @@ public class Utils {
         return order.getDishes().stream()
                 .map(Dish::getPrice)
                 .reduce(0.0, (left, right) -> left + right);
+    }
+
+    /**
+     * Sets the Nimbus look and feel
+     */
+    public static void setNimbusLookAndFeel() {
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Administrator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Administrator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Administrator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Administrator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
     }
 }

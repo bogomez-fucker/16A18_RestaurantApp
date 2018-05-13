@@ -235,8 +235,6 @@ public final class FilesDAO {
         } finally {
             lock.writeLock().unlock();
         }
-        
-        System.out.println("2");
     }
     
     private List<String[]> readFileSplittedByTab(String filePath,
