@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"restaurant"},{"l":"restaurant.controller"},{"l":"restaurant.model"},{"l":"restaurant.test"},{"l":"restaurant.util"},{"l":"restaurant.util.comparator"},{"l":"restaurant.view"}]

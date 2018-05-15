@@ -27,6 +27,8 @@ public class Payment extends JFrame {
     
     /**
      * Creates new form Payment
+     * @param order payment order
+     * @param user payer
      */
     public Payment(User user, Order order) {
         this.user = user;

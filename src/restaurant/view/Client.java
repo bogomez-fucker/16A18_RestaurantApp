@@ -46,6 +46,7 @@ public class Client extends JFrame {
 
     /**
      * Create new User GUI
+     * @param user client
      */
     public Client(User user) {
         this.user = user;

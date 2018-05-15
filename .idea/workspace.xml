@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="RestaurantApp" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d529ca95-4961-4279-9f50-4ec30f3003cc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/db/bills.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/db/bills.tsv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/orders.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/db/orders.tsv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restaurant/view/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/restaurant/view/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/restaurant/view/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/restaurant/view/Payment.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/restaurant/view/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-272">
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <folding>
+                <element signature="method#initComponents#0;class#Client#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FilesDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/restaurant/model/FilesDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="170" column="84" lean-forward="true" selection-start-line="170" selection-start-column="84" selection-end-line="170" selection-end-column="84" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Payment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/restaurant/view/Payment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>addActionListener</find>
+      <find>e</find>
+      <find />
+      <find>^(\s+)(        )([^ ].+)$</find>
+      <find>java.awt.</find>
+      <find>event.</find>
+      <find>this</find>
+      <find>.addGap(0, 0,</find>
+      <find>javax.swing.</find>
+      <find>//</find>
+      <find>^(.*)$</find>
+      <find>^\s+(.*)$</find>
+      <find>private</find>
+      <find>main(</find>
+      <find>tab</find>
+      <find>amo</find>
+      <find>Menu</find>
+      <find>getAm</find>
+      <find>.map(Dish::getPrice)</find>
+      <find>amou</find>
+      <find>Balance</find>
+      <find>.reduce(0.0, (left, right) -&gt; left + right);</find>
+      <find>main</find>
+      <find>JOptionPane</find>
+      <find>Date</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>$1$3</replace>
+      <replace>frame</replace>
+      <replace>public</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/restaurant/util/FileDB.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/ClientAddFDButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/model/FirstDishesTableModel.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/model/MenuModel.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/ClientASDButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/ClientAFDButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/AcceptOrderButtonController.java" />
+        <option value="$PROJECT_DIR$/db/orders.tsv" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/RequestPaymentController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/model/IdComparator.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/model/UserLoginComparator.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/Test.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/model/User.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/model/Order.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/model/Dish.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/model/Bill.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/ComparableTest.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/ComparatorTest.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/SerializationTest.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/TestDataProvider.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/util/Constants.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/util/comparator/DishPriceComparator.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/util/comparator/MenuHeaderComparator.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/util/comparator/OrderDishNumberComparator.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/util/comparator/UserLoginComparator.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/LoginButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/PayButtonController.java" />
+        <option value="$PROJECT_DIR$/db/users.tsv" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/AcceptOrdersButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/CancelBillButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/DeclineOrdersButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/DeleteDishButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/RequestPaymentButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/view/Administrator.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/ConfirmOrderButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/model/FilesDAO.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/view/Authorization.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/model/MenuTableModel.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/controller/AddDishButtonController.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/CloneableTest.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/util/comparator/BillAmountComparator.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/util/Utils.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/AdministratorTest.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/AppTest.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/AuthorizationTest.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/ClientTest.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/test/PaymentTest.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/Restaurant.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/restaurant/view/Payment.java" />
+        <option value="$PROJECT_DIR$/src/restaurant/view/Client.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="RestaurantMVC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RestaurantMVC" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RestaurantMVC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RestaurantMVC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RestaurantMVC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RestaurantMVC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RestaurantMVC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RestaurantMVC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="restaurant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RestaurantMVC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RestaurantMVC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="restaurant" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RestaurantMVC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RestaurantMVC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="restaurant" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RestaurantMVC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RestaurantMVC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="restaurant" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RestaurantMVC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RestaurantMVC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="restaurant" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="comparator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RestaurantMVC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RestaurantMVC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="restaurant" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="diagram&#9;ACTION&#9;UML.EditorGroup" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\RestaurantMVC\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\RestaurantMVC\db" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.ClientTest">
+    <configuration name="AdministratorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="restaurant.test.AdministratorTest" />
+      <module name="RestaurantMVC" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="restaurant.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="AppTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="restaurant.test.AppTest" />
+      <module name="RestaurantMVC" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="restaurant.test.AppTest" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="AuthorizationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="restaurant.test.AuthorizationTest" />
+      <module name="RestaurantMVC" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="restaurant.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="ClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="restaurant.test.ClientTest" />
+      <module name="RestaurantMVC" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="restaurant.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Restaurant" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="restaurant.Restaurant" />
+      <module name="RestaurantMVC" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="restaurant.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <list>
+      <item itemvalue="Application.AppTest" />
+      <item itemvalue="Application.ClientTest" />
+      <item itemvalue="Application.AuthorizationTest" />
+      <item itemvalue="Application.AdministratorTest" />
+      <item itemvalue="Application.Restaurant" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ClientTest" />
+        <item itemvalue="Application.AdministratorTest" />
+        <item itemvalue="Application.Restaurant" />
+        <item itemvalue="Application.AuthorizationTest" />
+        <item itemvalue="Application.AppTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d529ca95-4961-4279-9f50-4ec30f3003cc" name="Default" comment="" />
+      <created>1525095341158</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525095341158</updated>
+      <workItem from="1525095347051" duration="22154000" />
+      <workItem from="1525184632612" duration="5497000" />
+      <workItem from="1525198121078" duration="6348000" />
+      <workItem from="1525327360575" duration="3062000" />
+      <workItem from="1525685958230" duration="3855000" />
+      <workItem from="1525709897810" duration="3593000" />
+      <workItem from="1525725665003" duration="4309000" />
+      <workItem from="1525782850382" duration="5209000" />
+      <workItem from="1525792524798" duration="14922000" />
+      <workItem from="1525859801089" duration="6462000" />
+      <workItem from="1525870296596" duration="5598000" />
+      <workItem from="1525899974463" duration="3245000" />
+      <workItem from="1525961910847" duration="10550000" />
+      <workItem from="1526035184771" duration="2731000" />
+      <workItem from="1526043452498" duration="64000" />
+      <workItem from="1526043542315" duration="8970000" />
+      <workItem from="1526124150186" duration="6446000" />
+      <workItem from="1526237077985" duration="3169000" />
+      <workItem from="1526297023180" duration="1115000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1525096221923</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525096221923</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactor Client.java using controllers">
+      <created>1525104000146</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525104000146</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactor Client.java from now it more readable + normal names + comments">
+      <created>1525114986382</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1525114986382</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Starting refactoring of Administrator.java + Orders equals() fix">
+      <created>1525130618354</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1525130618354</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refactoring of Administrator.java is done + Constants provided">
+      <created>1525189509153</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1525189509153</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Refactoring of Authorization.java + removed redundant gaps">
+      <created>1525203381906</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1525203381906</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Administrator GUI -&gt; removed redundant gap">
+      <created>1525203793129</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1525203793129</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Serialization + Cloneable tests">
+      <created>1525725748783</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1525725748784</updated>
+    </task>
+    <task id="LOCAL-00009" summary="FileDB -&gt; FilesDAO">
+      <created>1525725994011</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1525725994011</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Comparators + Comparable added">
+      <created>1525730002891</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1525730002891</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Comparators + Comparable tests">
+      <created>1525793956476</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1525793956476</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added class comments for JavaDoc">
+      <created>1525816679828</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1525816679828</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Rid of main methods in view classes. Moved to respective test classes">
+      <created>1525817586137</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1525817586137</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added payment controller. Balance label fix, now it cut off exceed digits after decimal point.">
+      <created>1525824263822</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1525824263822</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Price and amount fixes(Payment, Client, Administrator). Now it length cut to 2 digits after decimal point">
+      <created>1525862228207</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1525862228207</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added getAmount() method into Utils. And rewrote it usage  in other classes">
+      <created>1525863108066</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1525863108066</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Payment commented + minor fixes">
+      <created>1525863835367</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1525863835367</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added frame links to controller, so JOptionPane now appears in center of parent frame">
+      <created>1525865483554</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1525865483554</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Jar build. RC1">
+      <created>1525905706049</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1525905706049</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Small fixes">
+      <created>1526238306112</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1526238306112</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="117299000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32905984" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32905984" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.3295302" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.53276354" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2877493" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.614" visible="true" weight="0.26644295" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3295302" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.386" side_tool="true" visible="true" weight="0.26644295" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3988604" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="8" weight="0.67310345" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="REST Client" order="8" weight="0.45156696" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="init" />
+    <MESSAGE value="Refactor Client.java using controllers" />
+    <MESSAGE value="Refactor Client.java from now it more readable + normal names + comments" />
+    <MESSAGE value="Starting refactoring of Administrator.java + Orders equals() fix" />
+    <MESSAGE value="Refactoring of Administrator.java is done + Constants provided" />
+    <MESSAGE value="Refactoring of Authorization.java + removed redundant gaps" />
+    <MESSAGE value="Administrator GUI -&gt; removed redundant gap" />
+    <MESSAGE value="Serialization + Cloneable tests" />
+    <MESSAGE value="FileDB -&gt; FilesDAO" />
+    <MESSAGE value="Comparators + Comparable added" />
+    <MESSAGE value="Comparators + Comparable tests" />
+    <MESSAGE value="Added class comments for JavaDoc" />
+    <MESSAGE value="Rid of main methods in view classes. Moved to respective test classes" />
+    <MESSAGE value="Added payment controller. Balance label fix, now it cut off exceed digits after decimal point." />
+    <MESSAGE value="Price and amount fixes(Payment, Client, Administrator). Now it length cut to 2 digits after decimal point" />
+    <MESSAGE value="Added getAmount() method into Utils. And rewrote it usage  in other classes" />
+    <MESSAGE value="Payment commented + minor fixes" />
+    <MESSAGE value="Added frame links to controller, so JOptionPane now appears in center of parent frame" />
+    <MESSAGE value="Jar build. RC1" />
+    <MESSAGE value="Small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small fixes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="15" />
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>decimal.length()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>numAfterComma &gt; digitsAfterPoint</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/serialization-test-163018984321332592.dat" />
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/StringLatin1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="1196" column="52" selection-start-line="1196" selection-start-column="52" selection-end-line="1196" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/restaurant.view">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>restaurant.view</OriginalElement>
+          <nodes>
+            <node x="" y="">restaurant.view.Client</node>
+            <node x="" y="">restaurant.view.Payment</node>
+            <node x="" y="">restaurant.view.Authorization</node>
+            <node x="" y="">restaurant.view.Administrator</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="108.0" y="89.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/users.tsv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/rest-api.http">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/model/Bill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/model/Dish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="17" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/model/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/view/Administrator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/controller/CancelBillButtonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/controller/DeclineOrdersButtonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/controller/DeleteDishButtonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/controller/PayButtonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/controller/RequestPaymentButtonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/util/comparator/DishPriceComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/util/comparator/MenuHeaderComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/util/comparator/OrderDishNumberComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/util/comparator/UserLoginComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/orders.tsv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/restaurant.view.Client">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>restaurant.view.Client</OriginalElement>
+          <nodes>
+            <node x="" y="">java.awt.Frame</node>
+            <node x="" y="">java.beans.JavaBean</node>
+            <node x="" y="">java.awt.Window</node>
+            <node x="" y="">java.awt.MenuContainer</node>
+            <node x="" y="">javax.swing.SwingContainer</node>
+            <node x="" y="">javax.swing.RootPaneContainer</node>
+            <node x="" y="">javax.swing.TransferHandler.HasGetTransferHandler</node>
+            <node x="" y="">javax.accessibility.Accessible</node>
+            <node x="" y="">java.awt.Component</node>
+            <node x="" y="">java.awt.image.ImageObserver</node>
+            <node x="" y="">java.io.Serializable</node>
+            <node x="" y="">restaurant.view.Client</node>
+            <node x="" y="">java.awt.Container</node>
+            <node x="" y="">javax.swing.JFrame</node>
+            <node x="" y="">javax.swing.WindowConstants</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="512.0" y="262.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/modules.uml" />
+    <entry file="file://$PROJECT_DIR$/../asda.uml" />
+    <entry file="file://$PROJECT_DIR$/restaurant.uml" />
+    <entry file="file://$PROJECT_DIR$/src/restaurant/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/model/MenuTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.desktop/javax/swing/ListSelectionModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="275" column="32" selection-start-line="275" selection-start-column="32" selection-end-line="275" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/util/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/view/Authorization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/controller/LoginButtonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/controller/ConfirmOrderButtonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="42" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/controller/AddDishButtonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/controller/AcceptOrdersButtonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/util/comparator/BillAmountComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/test/ComparableTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/test/SerializationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="59" column="8" lean-forward="true" selection-start-line="59" selection-start-column="8" selection-end-line="81" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/test/AdministratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/test/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/test/ClientTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/test/TestDataProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/util/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/test/PaymentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/test/CloneableTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/test/AuthorizationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/Restaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/test/ComparatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/view/Payment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/view/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="method#initComponents#0;class#Client#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/restaurant/model/FilesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="170" column="84" lean-forward="true" selection-start-line="170" selection-start-column="84" selection-end-line="170" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor>
+            <show-content>
+              <type id="library" />
+              <type id="javaee-facet-resources" />
+              <type id="artifact" />
+              <type id="jpa-descriptors" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>RestaurantApp</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>RestaurantMVC</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>KotlinJavaRuntime</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
